@@ -2,8 +2,6 @@
 
 I'm a third-year Informatics Engineering student at ISEP in Porto, currently on an Erasmus semester at Aarhus University in Denmark. Most of my free time goes into CTFs, and I want to build a career in offensive security.
 
-**Looking for:** a curricular internship from February to June 2027, ideally in cloud or security. I live in Porto.
-
 **Currently:** preparing for the AWS Cloud Practitioner and CEH exams.
 
 ## Highlights
