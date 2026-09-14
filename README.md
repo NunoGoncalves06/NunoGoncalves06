@@ -2,6 +2,8 @@
 
 I'm a third-year Informatics Engineering student at ISEP in Porto, currently on an Erasmus semester at Aarhus University in Denmark. Most of my free time goes into CTFs, and I want to build a career in offensive security.
 
+**Looking for:** a curricular internship from February to June 2027, ideally in cloud or security. I live in Porto.
+
 **Currently:** preparing for the AWS Cloud Practitioner and CEH exams.
 
 ## Highlights
@@ -27,11 +29,17 @@ Most of my coursework and competition projects live in private repositories, so 
 <!-- PROJECTS:START -->
 | Project | What it is | Main languages | My commits | When |
 |---|---|---|---|---|
+| **IoT sensor node** | Group IoT project in its design phase: an ESP32-C6 board with a VL6180X distance sensor, publishing readings over MQTT | ESP32-C6, MQTT | team member, in progress | 2026 |
 | **AISafe** | Flight control management prototype: Java console apps, a flight-plan DSL parsed with ANTLR, a C simulation engine, and user roles with security clearances | Java, C, Python | 117 of 627, team of 5 | 2025/26, 4th semester |
 | **LAPR3 integrative project** | Java application with C, C++ and Assembly modules and a PL/SQL database, including algorithm complexity analysis | Java, C, C++ | 167 of 665, team of 4 | 2025/26, 3rd semester |
-| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | 9 of 10 (top contributor), team of 2 | 2025 |
+| **JPA persistence demo** | Java console app persisting its domain objects with JPA (EclipseLink) on an H2 database, built for the EAPLI course | Java | 2 of 4, team of 2 | 2025/26 |
+| **CCNA 3 network automation** | Ansible playbooks that apply base configuration to and back up the routers of a lab network, for the CCNA 3 (ENSA) final project | Ansible, YAML | team member | 2025/26 |
+| **European stations dataset** | Python collector that merges railway stations and airports across Europe from OpenStreetMap and OurAirports into one CSV, with duplicate detection (built with Copilot's help) | Python | 3 of 3, solo | 2025 |
 | **All Aboard (Best Project Award)** | First-year integrative project covering every first-year module: a Java application built through a full development process (requirements, OO analysis and design, unit tests with coverage) plus data analysis in Jupyter | Java, Python | 115 of 539, team of 5 | 2024/25, 2nd semester |
+| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | 9 of 10 (top contributor), team of 2 | 2025 |
 | **Face identification with Eigenfaces** | Face identification and image reconstruction using Eigenfaces (PCA), written in Java | Java | 82 of 145 (top contributor), team of 5 | 2024/25, 1st semester |
+| **EV fleet charging analysis** | Java console program that reads electric-vehicle mileage data and works out daily recharges, battery levels, charging costs and above-average vehicles (APROG assignment) | Java | 39 of 49 (top contributor), team of 2 | 2024/25, 1st semester |
+| **QuintinhaVirtual website** | Business-card website for a fictional organic farm shop, customised from an HTML template | HTML, SCSS, JavaScript | 13 of 15 (top contributor), team of 2 | 2024/25, 1st semester |
 <!-- PROJECTS:END -->
 
 ## Get in touch
