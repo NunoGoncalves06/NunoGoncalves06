@@ -44,7 +44,7 @@ I'm a third-year Informatics Engineering student at ISEP in Porto, currently on 
 | | |
 |---|---|
 | 💻 **Programming** | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp" alt="Java, Kotlin, Python, C, C++"/> |
-| ☁️ **Cloud & tooling** | <img src="https://skillicons.dev/icons?i=aws,linux,git,github" alt="AWS, Linux, Git, GitHub"/> |
+| ☁️ **Cloud & tooling** | <img src="https://skillicons.dev/icons?i=aws,linux,docker,ansible,git,github" alt="AWS, Linux, Docker, Ansible, Git, GitHub"/> |
 | 🛡️ **Security** | <img src="https://img.shields.io/badge/Wireshark-0d1117?style=for-the-badge&logo=wireshark&logoColor=1679A7" alt="Wireshark"/> <img src="https://img.shields.io/badge/Burp%20Suite-0d1117?style=for-the-badge&logo=burpsuite&logoColor=FF6633" alt="Burp Suite"/> <img src="https://img.shields.io/badge/Hydra-0d1117?style=for-the-badge&logo=gnubash&logoColor=00ff9f" alt="Hydra"/><br/>CTFs, mostly **forensics**, **reverse engineering**, **pwn** and **misc**; CEH training completed |
 | 🌐 **Networking** | <img src="https://img.shields.io/badge/Cisco-0d1117?style=for-the-badge&logo=cisco&logoColor=1BA0D7" alt="Cisco"/><br/>Routing, switching and network fundamentals (CCNA) |
 | 🗣️ **Languages** | 🇵🇹 Portuguese (native) · 🇬🇧 English (C1, IELTS Academic) |
