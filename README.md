@@ -43,7 +43,7 @@ I'm a third-year Informatics Engineering student at ISEP in Porto, currently on 
 
 | | |
 |---|---|
-| 💻 **Programming** | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp" alt="Java, Kotlin, Python, C, C++"/> |
+| 💻 **Programming** | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cs" alt="Java, Kotlin, Python, C, C#"/> |
 | ☁️ **Cloud & tooling** | <img src="https://skillicons.dev/icons?i=aws,linux,docker,ansible,git,github" alt="AWS, Linux, Docker, Ansible, Git, GitHub"/> |
 | 🎮 **Web & game dev** | <img src="https://skillicons.dev/icons?i=angular,unity" alt="Angular, Unity"/> |
 | 🛡️ **Security** | <img src="https://img.shields.io/badge/Wireshark-0d1117?style=for-the-badge&logo=wireshark&logoColor=1679A7" alt="Wireshark"/> <img src="https://img.shields.io/badge/Burp%20Suite-0d1117?style=for-the-badge&logo=burpsuite&logoColor=FF6633" alt="Burp Suite"/> <img src="https://img.shields.io/badge/Hydra-0d1117?style=for-the-badge&logo=gnubash&logoColor=00ff9f" alt="Hydra"/><br/>CTFs, mostly **forensics**, **reverse engineering**, **pwn** and **misc**; CEH training completed |
