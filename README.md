@@ -7,8 +7,8 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 [Email me](mailto:nunogoncalves070906@gmail.com) or find me on LinkedIn at [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906).
 
 <p>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/overview.svg" alt="My GitHub account in numbers, with a year of contributions drawn as an isometric calendar"/>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/achievements.svg" alt="GitHub achievements"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/overview.svg" alt="My GitHub activity in numbers, with a year of contributions drawn as an isometric calendar"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/repositories.svg" alt="My public repositories: Wakecast and Alchemist's Arsenal"/>
 </p>
 
 ## So far
@@ -24,11 +24,6 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 <img src="https://skillicons.dev/icons?i=java,c,py,kotlin,cpp,linux,kali,docker,git,aws&theme=light" alt="Java, C, Python, Kotlin, C++, Linux, Kali Linux, Docker, Git, AWS"/>
 
 On the security side I use Wireshark, Burp Suite and Hydra, and the CCNA covers routing and switching.
-
-<p>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/code.svg" alt="The languages I use most and when I tend to commit"/>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/repositories.svg" alt="My public repositories: Wakecast and Alchemist's Arsenal"/>
-</p>
 
 ## Projects
 
