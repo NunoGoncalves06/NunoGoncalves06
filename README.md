@@ -35,21 +35,41 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 
 ## Projects
 
-| Project | What it is | Built with |
-|---|---|---|
-| [Wakecast](https://github.com/NunoGoncalves06/Wakecast) | Android alarm that reads out a morning briefing when you dismiss it: weather, your day and the news | Java |
-| Enterprise network | CCNA 3 final project, built by a team on real Cisco equipment and awarded the maximum score. Three sites with VLANs, OSPF, HSRP, an IPsec VPN, IP telephony and Ansible backups | Cisco IOS, Ansible |
-| AISafe | Flight control management prototype with a flight-plan language parsed with ANTLR, a C simulation engine and user roles with security clearances | Java, C, Python |
-| All Aboard | First-year integrative project that won ISEP's Best Project Award: a Java application with unit tests and data analysis in Jupyter | Java, Python |
-| Sueca bots | Competition bots for the Portuguese card game Sueca, running in Docker containers against other teams at the ENEI tournament | Java, Python, Docker |
+Most of my coursework and competition projects live in private repositories, so here's what I built and how much of it was mine. The two public ones link to their code.
 
-The course and competition repositories are private, so only Wakecast links to its code.
+| Project | What it is | Main languages | My commits | When |
+|---|---|---|---|---|
+| **[Wakecast](https://github.com/NunoGoncalves06/Wakecast)** | Android alarm with a morning briefing: weather, your day and the news read out when you dismiss the alarm. On-device voices, no accounts | Java | 21 of 21, solo | 2026 |
+| **[Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal)** | Unity game project | C# | 3 of 6, team of 2 | 2026 |
+| **IoT sensor node** | Group IoT project in its design phase: an ESP32-C6 board with a VL6180X distance sensor, publishing readings over MQTT | ESP32-C6, MQTT | team member, in progress | 2026 |
+| **AISafe** | Flight control management prototype: Java console apps, a flight-plan DSL parsed with ANTLR, a C simulation engine, and user roles with security clearances | Java, C, Python | 117 of 627, team of 5 | 2025/26, 4th semester |
+| **LAPR3 integrative project** | Java application with C, C++ and Assembly modules and a PL/SQL database, including algorithm complexity analysis | Java, C, C++ | 167 of 665, team of 4 | 2025/26, 3rd semester |
+| **JPA persistence demo** | Java console app persisting its domain objects with JPA (EclipseLink) on an H2 database, built for the EAPLI course | Java | 2 of 4, team of 2 | 2025/26 |
+| **CCNA 3 enterprise network** | Final project of CCNA 3 (ENSA), built on real Cisco equipment and awarded the maximum score. A three-site network with VLANs, OSPF, HSRP, an IPsec VPN and IP telephony, plus Ansible playbooks that apply base configuration to the routers and back them up | Cisco IOS, Ansible, YAML | team member | 2025/26 |
+| **European stations dataset** | Python collector that merges railway stations and airports across Europe from OpenStreetMap and OurAirports into one CSV, with duplicate detection (built with Copilot's help) | Python | 3 of 3, solo | 2025 |
+| **All Aboard (Best Project Award)** | First-year integrative project covering every first-year module: a Java application built through a full development process (requirements, OO analysis and design, unit tests with coverage) plus data analysis in Jupyter | Java, Python | 115 of 539, team of 5 | 2024/25, 2nd semester |
+| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | top contributor | 2025 |
+| **Face identification with Eigenfaces** | Face identification and image reconstruction using Eigenfaces (PCA), written in Java | Java | 82 of 145 (top contributor), team of 5 | 2024/25, 1st semester |
+| **EV fleet charging analysis** | Java console program that reads electric-vehicle mileage data and works out daily recharges, battery levels, charging costs and above-average vehicles (APROG assignment) | Java | 39 of 49 (top contributor), team of 2 | 2024/25, 1st semester |
+| **QuintinhaVirtual website** | Business-card website for a fictional organic farm shop, customised from an HTML template | HTML, SCSS, JavaScript | 13 of 15 (top contributor), team of 2 | 2024/25, 1st semester |
 
 ## What I work with
 
-<img src="https://skillicons.dev/icons?i=java,c,py,kotlin,cpp,linux,kali,docker,git,aws&theme=light" alt="Java, C, Python, Kotlin, C++, Linux, Kali Linux, Docker, Git, AWS"/>
+| | |
+|---|---|
+| Programming | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp,cs&theme=light" alt="Java, Kotlin, Python, C, C++, C#"/> |
+| Cloud and tooling | <img src="https://skillicons.dev/icons?i=aws,linux,kali,docker,ansible,git,github,gitlab&theme=light" alt="AWS, Linux, Kali Linux, Docker, Ansible, Git, GitHub, GitLab"/> |
+| Web and game dev | <img src="https://skillicons.dev/icons?i=angular,unity&theme=light" alt="Angular, Unity"/> |
+| Security | Wireshark, Burp Suite, Hydra and Ghidra. CTFs, mostly forensics, reverse engineering, pwn and misc. CEH training completed |
+| Networking | Routing, switching and network fundamentals (CCNA) |
+| Languages | Portuguese (native), English (C1, IELTS Academic) |
 
-For security work I use Wireshark, Burp Suite and Hydra. The CCNA covers routing, switching, VLANs, OSPF and ACLs.
+## Contribution activity
+
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg"/>
+  <img src="assets/snake.svg" width="100%" alt="Snake eating my contribution graph"/>
+</picture>
 
 ## Education and experience
 
