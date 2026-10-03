@@ -9,10 +9,12 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 
 ## Certifications
 
-<img src="https://img.shields.io/badge/CCNA-certified%202026-35d07f?style=for-the-badge&labelColor=000000" alt="CCNA: certified 2026"/>
-<img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-35d07f?style=for-the-badge&labelColor=000000" alt="IELTS Academic: English C1"/>
-<img src="https://img.shields.io/badge/CEH%20v13-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="CEH v13: training completed"/>
-<img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="AWS Cloud Practitioner: training completed"/>
+<p>
+  <img src="https://img.shields.io/badge/CCNA-certified%202026-35d07f?style=for-the-badge&labelColor=000000" alt="CCNA: certified 2026"/>
+  <img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-35d07f?style=for-the-badge&labelColor=000000" alt="IELTS Academic: English C1"/>
+  <img src="https://img.shields.io/badge/CEH%20v13-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="CEH v13: training completed"/>
+  <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="AWS Cloud Practitioner: training completed"/>
+</p>
 
 Cisco CCNA certified in August 2026. The CEH v13 and AWS Cloud Practitioner courses were at ISEP Academy.
 
