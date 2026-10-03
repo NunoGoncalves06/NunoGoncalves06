@@ -25,7 +25,7 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 ## On GitHub
 
 <p align="center">
-  <img width="480" src="metrics.terminal.svg" alt="My GitHub activity printed as a Kali-style terminal session"/>
+  <img width="100%" src="metrics.terminal.svg" alt="A Kali-style terminal showing my profile facts next to an ASCII dragon, then my GitHub activity"/>
 </p>
 
 ## Projects
