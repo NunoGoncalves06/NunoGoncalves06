@@ -1,58 +1,40 @@
-<div align="center">
+<img src="assets/header.svg" width="100%" alt="Nuno Gonçalves. Informatics engineering student at ISEP, playing CTFs with CHAØS."/>
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:0d1117,55:0b3d2c,100:00ff9f&height=200&section=header&text=Nuno%20Gon%C3%A7alves&fontSize=58&fontColor=ffffff&fontAlignY=36&desc=Informatics%20Engineering%20%E2%80%A2%20CTF%20Player%20%E2%80%A2%20Offensive%20Security&descSize=18&descAlignY=58&animation=fadeIn" width="100%" alt="Nuno Gonçalves"/>
+I'm a third-year Informatics Engineering student at ISEP in Porto, on an Erasmus semester at Aarhus University until January 2027. Most of my free time goes into CTFs with CHAØS, ISEP's team, where I play forensics, reverse engineering, pwn and misc. I like finding how things break and then explaining how to fix them.
 
-<a href="https://git.io/typing-svg"><img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=20&duration=3000&pause=800&color=00FF9F&center=true&vCenter=true&width=520&lines=%24+whoami;Informatics+Engineering+student+%40+ISEP;CTF+player+with+CHA%C3%98S+%F0%9F%9A%A9;Erasmus+semester+%40+Aarhus+University;Future+offensive+security+engineer" alt="Typing SVG"/></a>
+**Available from February 2027** for a curricular internship in cybersecurity, February to June 2027.
 
-<p>
-  <img src="https://img.shields.io/badge/Porto,%20Portugal-0d1117?style=for-the-badge&logo=googlemaps&logoColor=00ff9f" alt="Porto, Portugal"/>
-  <img src="https://img.shields.io/badge/ISEP-0d1117?style=for-the-badge&logo=bookstack&logoColor=00ff9f" alt="ISEP"/>
-  <img src="https://img.shields.io/badge/Erasmus%20%40%20Aarhus%20University-0d1117?style=for-the-badge&logo=europeanunion&logoColor=00ff9f" alt="Erasmus @ Aarhus University"/>
-</p>
+Reach me at [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com) or on LinkedIn at [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogonçalves070906).
 
-<p>
-  <a href="https://www.linkedin.com/in/nunogon%C3%A7alves070906"><img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI2ZmZiIgZD0iTTIwLjQ0NyAyMC40NTJoLTMuNTU0di01LjU2OWMwLTEuMzI4LS4wMjctMy4wMzctMS44NTItMy4wMzctMS44NTMgMC0yLjEzNiAxLjQ0NS0yLjEzNiAyLjkzOXY1LjY2N0g5LjM1MVY5aDMuNDE0djEuNTYxaC4wNDZjLjQ3Ny0uOSAxLjYzNy0xLjg1IDMuMzctMS44NSAzLjYwMSAwIDQuMjY3IDIuMzcgNC4yNjcgNC45djQuNzE1ek01LjMzNyA3LjQzM2MtMS4xNDQgMC0yLjA2My0uOTI2LTIuMDYzLTIuMDY1IDAtMS4xMzguOTItMi4wNjMgMi4wNjMtMi4wNjMgMS4xNCAwIDIuMDY0LjkyNSAyLjA2NCAyLjA2MyAwIDEuMTM5LS45MjUgMi4wNjUtMi4wNjQgMi4wNjV6bTEuNzgyIDEzLjAxOUgzLjU1NVY5aDMuNTY0djExLjQ1MnpNMjIuMjI1IDBIMS43NzFDLjc5MiAwIDAgLjc3NCAwIDEuNzI5djIwLjU0MkMwIDIzLjIyNy43OTIgMjQgMS43NzEgMjRoMjAuNDUxQzIzLjIgMjQgMjQgMjMuMjI3IDI0IDIyLjI3MVYxLjcyOUMyNCAuNzc0IDIzLjIgMCAyMi4yMjIgMGguMDAzeiIvPjwvc3ZnPg==" alt="LinkedIn"/></a>
-  <a href="mailto:nunogoncalves070906@gmail.com"><img src="https://img.shields.io/badge/Email-EA4335?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"/></a>
-</p>
+## Competitions and certifications
 
-</div>
+| Result | What | When |
+|---|---|---|
+| **Junior top 10** | Cybersecurity Challenge PT. One of the 15 juniors selected for the national bootcamp (National Cybersecurity Centre) | Jul 2026 |
+| **8th of 300+ teams** | upCTF 2026 with CHAØS, my first CTF | Mar 2026 |
+| **Certified** | Cisco Certified Network Associate (CCNA) | Aug 2026 |
+| **Best Project Award** | *All Aboard*, ISEP's first-year integrative project | 2025 |
 
-## 👋 Hi, I'm Nuno
+Training completed at ISEP Academy: CEH v13 and AWS Cloud Practitioner.
 
-I'm a third-year Informatics Engineering student at ISEP in Porto, currently on an Erasmus semester at Aarhus University in Denmark. Most of my free time goes into CTFs, and I want to build a career in offensive security.
-
-> [!TIP]
-> **🎯 Currently:** preparing for the AWS Cloud Practitioner and CEH exams.
->
-> <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-preparing-FF9900?style=flat-square&labelColor=0d1117" alt="AWS Cloud Practitioner: preparing"/> <img src="https://img.shields.io/badge/CEH-preparing-FF9900?style=flat-square&labelColor=0d1117" alt="CEH: preparing"/>
-
-## 🏆 Highlights
-
-- 🇵🇹 **Cybersecurity Challenge PT 2026:** one of the 15 juniors selected for the national bootcamp where the National Cybersecurity Centre picks the team that represents Portugal at the European Cybersecurity Challenge. Finished in the junior top 10.
-- 🚩 **CHAØS, ISEP's CTF team:** 8th out of more than 300 teams at upCTF 2026, my first CTF. I've played many more since.
-- 🥇 **Best Project Award** at ISEP for *All Aboard*, the first-year integrative project.
-- 📜 **Certifications:** Cisco CCNA. Training for AWS Cloud Practitioner and CEH completed.
+## On GitHub
 
 <p>
-  <img src="https://img.shields.io/badge/Cisco%20CCNA-certified-00ff9f?style=for-the-badge&logo=cisco&logoColor=white&labelColor=1BA0D7" alt="Cisco CCNA: certified"/>
-  <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-0d1117?style=for-the-badge&labelColor=FF9900" alt="AWS Cloud Practitioner: training completed"/>
-  <img src="https://img.shields.io/badge/CEH-training%20completed-0d1117?style=for-the-badge&labelColor=B31B1B" alt="CEH: training completed"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/overview.svg" alt="Account overview and a year of contributions as an isometric calendar"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/languages.svg" alt="Languages I use most, counted from the lines I authored"/>
+</p>
+<p>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/habits.svg" alt="When I commit, by hour and by weekday"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/achievements.svg" alt="GitHub achievements"/>
 </p>
 
-## 🛠️ What I work with
+Most of my work sits in private course repositories, so these cards include private contributions, and the language card counts only lines I wrote myself. They are redrawn every day by [lowlighter/metrics](https://github.com/lowlighter/metrics).
 
-| | |
-|---|---|
-| 💻 **Programming** | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cs" alt="Java, Kotlin, Python, C, C#"/> |
-| ☁️ **Cloud & tooling** | <img src="https://skillicons.dev/icons?i=aws,linux,docker,ansible,git,github" alt="AWS, Linux, Docker, Ansible, Git, GitHub"/> |
-| 🎮 **Web & game dev** | <img src="https://skillicons.dev/icons?i=angular,unity" alt="Angular, Unity"/> |
-| 🛡️ **Security** | <img src="https://img.shields.io/badge/Wireshark-0d1117?style=for-the-badge&logo=wireshark&logoColor=1679A7" alt="Wireshark"/> <img src="https://img.shields.io/badge/Burp%20Suite-0d1117?style=for-the-badge&logo=burpsuite&logoColor=FF6633" alt="Burp Suite"/> <img src="https://img.shields.io/badge/Ghidra-0d1117?style=for-the-badge&logo=data:image/svg%2bxml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNCAyNCI+PHBhdGggZmlsbD0iI0UwNDczQSIgZD0iTTEwIDJhOCA4IDAgMCAxIDYuMzIgMTIuOWw1LjM5IDUuMzktMS40MiAxLjQyLTUuMzktNS4zOUE4IDggMCAxIDEgMTAgMnptMCAyYTYgNiAwIDEgMCAwIDEyIDYgNiAwIDAgMCAwLTEyeiIvPjwvc3ZnPg==" alt="Ghidra"/><br/>CTFs, mostly **forensics**, **reverse engineering**, **pwn** and **misc**; CEH training completed |
-| 🌐 **Networking** | <img src="https://img.shields.io/badge/Cisco-0d1117?style=for-the-badge&logo=cisco&logoColor=1BA0D7" alt="Cisco"/><br/>Routing, switching and network fundamentals (CCNA) |
-| 🗣️ **Languages** | 🇵🇹 Portuguese (native) · 🇬🇧 English (C1, IELTS Academic) |
+## Projects
 
-## 🚀 Projects
+In public: [Wakecast](https://github.com/NunoGoncalves06/Wakecast), an Android alarm that reads out a morning briefing when you dismiss it, and [Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal), a Unity game.
 
-Most of my coursework and competition projects live in private repositories 🔒, so here's what I built and how much of it was mine:
+The coursework and competition repositories are private, so this table says what each one is and how much of it was mine:
 
 <!-- PROJECTS:START -->
 | Project | What it is | Main languages | My commits | When |
@@ -64,25 +46,18 @@ Most of my coursework and competition projects live in private repositories 🔒
 | **CCNA 3 network automation** | Ansible playbooks that apply base configuration to and back up the routers of a lab network, for the CCNA 3 (ENSA) final project | Ansible, YAML | team member | 2025/26 |
 | **European stations dataset** | Python collector that merges railway stations and airports across Europe from OpenStreetMap and OurAirports into one CSV, with duplicate detection (built with Copilot's help) | Python | 3 of 3, solo | 2025 |
 | **All Aboard (Best Project Award)** | First-year integrative project covering every first-year module: a Java application built through a full development process (requirements, OO analysis and design, unit tests with coverage) plus data analysis in Jupyter | Java, Python | 115 of 539, team of 5 | 2024/25, 2nd semester |
-| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | 9 of 10 (top contributor), team of 2 | 2025 |
+| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | top contributor | 2025 |
 | **Face identification with Eigenfaces** | Face identification and image reconstruction using Eigenfaces (PCA), written in Java | Java | 82 of 145 (top contributor), team of 5 | 2024/25, 1st semester |
 | **EV fleet charging analysis** | Java console program that reads electric-vehicle mileage data and works out daily recharges, battery levels, charging costs and above-average vehicles (APROG assignment) | Java | 39 of 49 (top contributor), team of 2 | 2024/25, 1st semester |
 | **QuintinhaVirtual website** | Business-card website for a fictional organic farm shop, customised from an HTML template | HTML, SCSS, JavaScript | 13 of 15 (top contributor), team of 2 | 2024/25, 1st semester |
 <!-- PROJECTS:END -->
 
-## 🐍 Contribution activity
+## What I work with
 
-<div align="center">
-  <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/output/github-snake-dark.svg"/>
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/output/github-snake.svg"/>
-    <img src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/output/github-snake-dark.svg" alt="Snake eating my contribution graph"/>
-  </picture>
-</div>
-
-## 📫 Get in touch
-
-- ✉️ **Email:** [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com)
-- 💼 **LinkedIn:** [linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906)
-
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:00ff9f,45:0b3d2c,100:0d1117&height=110&section=footer" width="100%" alt=""/>
+| | |
+|---|---|
+| **Security** | CTF forensics, reverse engineering and pwn. Wireshark, Burp Suite, Hydra, Kali Linux |
+| **Networking** | Routing, switching and network fundamentals (CCNA) |
+| **Programming** | Java, C, Python, Kotlin, C++ |
+| **Platforms** | Linux, Docker, Git, GitHub and GitLab, AWS fundamentals |
+| **Languages** | Portuguese (native), English (C1, IELTS Academic) |
