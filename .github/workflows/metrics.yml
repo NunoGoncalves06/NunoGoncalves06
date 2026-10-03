@@ -1,28 +1,17 @@
 name: Metrics
 
-# Draws the cards shown in README.md with https://github.com/lowlighter/metrics and
-# commits them to this branch as metrics.*.svg.
-#
-# The overview and featured-repository cards run on the built-in Actions token.
-# Languages, habits and achievements need a personal token, so those two steps only
-# run once the repository has a secret named METRICS_TOKEN: a personal access token
-# (classic) with the scopes repo, read:user and read:org. Until then their SVG files
-# are empty placeholders, which the README shows as nothing.
+# Layout option "terminal": draws its cards onto this branch so the README here can be previewed.
 
 on:
   schedule:
     - cron: "17 4 * * *"
   workflow_dispatch:
   push:
-    branches: [main]
+    branches: ["main"]
     paths: [.github/workflows/metrics.yml]
 
 permissions:
   contents: write
-
-concurrency:
-  group: metrics
-  cancel-in-progress: true
 
 env:
   TOKEN: ${{ secrets.METRICS_TOKEN || github.token }}
@@ -33,67 +22,30 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
-      - name: Overview and contribution calendar
+      - name: Terminal card
         if: ${{ success() || failure() }}
         uses: lowlighter/metrics@latest
         with:
           token: ${{ env.TOKEN }}
           user: NunoGoncalves06
-          filename: metrics.overview.svg
+          filename: metrics.terminal.svg
           output_action: commit
-          template: classic
+          committer_branch: main
+          template: terminal
           base: header, activity
           config_timezone: Europe/Lisbon
-          plugin_isocalendar: yes
-          plugin_isocalendar_duration: full-year
-
-      - name: Featured repositories
-        if: ${{ success() || failure() }}
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ env.TOKEN }}
-          user: NunoGoncalves06
-          filename: metrics.repositories.svg
-          output_action: commit
-          template: classic
-          base: ""
-          plugin_repositories: yes
-          plugin_repositories_featured: NunoGoncalves06/Wakecast, NunoGoncalves06/alchemists-arsenal
-
-      - name: Languages and coding habits
-        if: ${{ env.HAS_PERSONAL_TOKEN == 'true' && (success() || failure()) }}
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ env.TOKEN }}
-          user: NunoGoncalves06
-          filename: metrics.code.svg
-          output_action: commit
-          template: classic
-          base: ""
-          # In Aarhus until January 2027; switch back to Europe/Lisbon after that.
-          config_timezone: Europe/Copenhagen
-          plugin_languages: yes
-          plugin_languages_details: bytes-size, percentage
-          plugin_languages_limit: 6
-          plugin_languages_ignored: html, css, scss, jupyter notebook, shaderlab, hlsl, makefile, batchfile, roff
-          plugin_habits: yes
-          plugin_habits_from: 200
-          plugin_habits_days: 30
-          plugin_habits_facts: yes
-          plugin_habits_charts: yes
-
-      - name: Achievements
-        if: ${{ env.HAS_PERSONAL_TOKEN == 'true' && (success() || failure()) }}
-        uses: lowlighter/metrics@latest
-        with:
-          token: ${{ env.TOKEN }}
-          user: NunoGoncalves06
-          filename: metrics.achievements.svg
-          output_action: commit
-          template: classic
-          base: ""
-          plugin_achievements: yes
-          plugin_achievements_display: detailed
-          plugin_achievements_threshold: C
-          plugin_achievements_secrets: yes
-          plugin_achievements_limit: 8
+          extras_css: |
+            foreignObject > div:first-child { background: #000; border: 1px solid #1f7a4d; border-radius: 10px; overflow: hidden; }
+            .header { flex-direction: row-reverse; justify-content: flex-end; height: 30px; padding: 0 12px; border-radius: 0; background: #04261a; border-bottom: 1px solid #0f4a30; }
+            .title::before { content: "nuno@kali ~"; color: #35d07f; font-size: 14px; margin-left: 6px; }
+            .button, .button.exit { font-size: 0; width: 11px; height: 11px; margin-right: 7px; text-shadow: none; background: #27c93f; }
+            .button:nth-child(1) { background: #ff5f56; }
+            .button:nth-child(2) { background: #ffbd2e; }
+            pre, .title { font-family: 'Courier Prime', 'Courier New', monospace; }
+            pre { background: #000; color: #35d07f; padding: 14px 16px 16px; border-radius: 0; font-size: 13px; }
+            pre b { color: #7dffb0; }
+            pre::before { display: block; white-space: pre; color: #35d07f; margin-bottom: 14px; line-height: 1.05; content: "#\a0 \a0 #\a0 \a0 \a0 ##\a0 \a0 \a0 #\a0 \a0 \a0 \a0 \a0 #\A#\a0 #\a0 \a0 \a0 #\a0 \a0 #\a0 \a0 #\a0 \a0 \a0 \a0 \a0 #\A##\a0 \a0 \a0 \a0 ####\a0 \a0 #\a0 \a0 \a0 \a0 \a0 #\A#\a0 #\a0 \a0 \a0 #\a0 \a0 #\a0 \a0 #\a0 \a0 \a0 \a0 \a0 #\A#\a0 \a0 #\a0 \a0 #\a0 \a0 #\a0 \a0 ####\a0 \a0 #"; }
+            .ps1-path { font-size: 0; }
+            .ps1-path::before { content: "nuno@kali"; font-size: 13px; color: #35d07f; }
+            .ps1-location { color: #7dffb0; }
+            .diff { color: #7dffb0; }

@@ -24,13 +24,8 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 
 ## On GitHub
 
-<p>
-  <img align="top" width="49%" src="metrics.overview.svg" alt="My GitHub activity in numbers, with a year of contributions drawn as an isometric calendar"/>
-  <img align="top" width="49%" src="metrics.repositories.svg" alt="My public repositories: Wakecast and Alchemist's Arsenal"/>
-</p>
-<p>
-  <img align="top" width="49%" src="metrics.code.svg" alt=""/>
-  <img align="top" width="49%" src="metrics.achievements.svg" alt=""/>
+<p align="center">
+  <img width="480" src="metrics.terminal.svg" alt="My GitHub activity printed as a Kali-style terminal session"/>
 </p>
 
 ## Projects
