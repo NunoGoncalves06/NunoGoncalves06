@@ -4,17 +4,17 @@ I study Informatics Engineering at ISEP in Porto, and this semester I'm on Erasm
 
 I'm available from February 2027 for a curricular internship in cybersecurity, February to June.
 
-<a href="mailto:nunogoncalves070906@gmail.com"><img src="https://img.shields.io/badge/Email-nunogoncalves070906@gmail.com-2B5FD9?style=for-the-badge&labelColor=EEF3FC" alt="Email: nunogoncalves070906@gmail.com"/></a>
-<a href="https://www.linkedin.com/in/nunogon%C3%A7alves070906"><img src="https://img.shields.io/badge/LinkedIn-nunogonçalves070906-2B5FD9?style=for-the-badge&labelColor=EEF3FC" alt="LinkedIn: www.linkedin.com/in/nunogonçalves070906"/></a>
+<a href="mailto:nunogoncalves070906@gmail.com"><img src="https://img.shields.io/badge/Email-nunogoncalves070906@gmail.com-27a567?style=for-the-badge&labelColor=000000" alt="Email: nunogoncalves070906@gmail.com"/></a>
+<a href="https://www.linkedin.com/in/nunogon%C3%A7alves070906"><img src="https://img.shields.io/badge/LinkedIn-nunogonçalves070906-27a567?style=for-the-badge&labelColor=000000" alt="LinkedIn: www.linkedin.com/in/nunogonçalves070906"/></a>
 
 ## Certifications
 
 | | | |
 |---|---|---|
-| <img src="https://img.shields.io/badge/CCNA-certified-12307A?style=for-the-badge&labelColor=EEF3FC" alt="CCNA: certified"/> | Cisco Certified Network Associate | Certified in August 2026 |
-| <img src="https://img.shields.io/badge/CEH%20v13-training%20completed-4A64A8?style=for-the-badge&labelColor=EEF3FC" alt="CEH v13: training completed"/> | Certified Ethical Hacker course | ISEP Academy, February to July 2026 |
-| <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-4A64A8?style=for-the-badge&labelColor=EEF3FC" alt="AWS Cloud Practitioner: training completed"/> | AWS fundamentals course | ISEP Academy, October 2025 to January 2026 |
-| <img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-12307A?style=for-the-badge&labelColor=EEF3FC" alt="IELTS Academic: English C1"/> | English language certificate | Portuguese is my native language |
+| <img src="https://img.shields.io/badge/CCNA-certified-35d07f?style=for-the-badge&labelColor=000000" alt="CCNA: certified"/> | Cisco Certified Network Associate | Certified in August 2026 |
+| <img src="https://img.shields.io/badge/CEH%20v13-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="CEH v13: training completed"/> | Certified Ethical Hacker course | ISEP Academy, February to July 2026 |
+| <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="AWS Cloud Practitioner: training completed"/> | AWS fundamentals course | ISEP Academy, October 2025 to January 2026 |
+| <img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-35d07f?style=for-the-badge&labelColor=000000" alt="IELTS Academic: English C1"/> | English language certificate | Portuguese is my native language |
 
 ## Competitions and awards
 
@@ -52,9 +52,9 @@ Most of my coursework and competition projects live in private repositories, so 
 
 | | |
 |---|---|
-| Programming | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp,cs&theme=light" alt="Java, Kotlin, Python, C, C++, C#"/> |
-| Cloud and tooling | <img src="https://skillicons.dev/icons?i=aws,linux,kali,docker,ansible,git,github,gitlab&theme=light" alt="AWS, Linux, Kali Linux, Docker, Ansible, Git, GitHub, GitLab"/> |
-| Web and game dev | <img src="https://skillicons.dev/icons?i=angular,unity&theme=light" alt="Angular, Unity"/> |
+| Programming | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp,cs" alt="Java, Kotlin, Python, C, C++, C#"/> |
+| Cloud and tooling | <img src="https://skillicons.dev/icons?i=aws,linux,kali,docker,ansible,git,github,gitlab" alt="AWS, Linux, Kali Linux, Docker, Ansible, Git, GitHub, GitLab"/> |
+| Web and game dev | <img src="https://skillicons.dev/icons?i=angular,unity" alt="Angular, Unity"/> |
 | Security | Wireshark, Burp Suite, Hydra and Ghidra. CTFs, mostly forensics, reverse engineering, pwn and misc. CEH training completed |
 | Networking | Routing, switching and network fundamentals (CCNA) |
 | Languages | Portuguese (native), English (C1, IELTS Academic) |
