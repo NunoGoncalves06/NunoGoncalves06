@@ -1,40 +1,43 @@
-<img src="assets/header.svg" width="100%" alt="Nuno Gonçalves. Informatics engineering student at ISEP, playing CTFs with CHAØS."/>
+<img src="assets/header.svg" width="100%" alt="Nuno Gonçalves. Informatics engineering student at ISEP. CTF player with CHAØS."/>
 
-I'm a third-year Informatics Engineering student at ISEP in Porto, on an Erasmus semester at Aarhus University until January 2027. Most of my free time goes into CTFs with CHAØS, ISEP's team, where I play forensics, reverse engineering, pwn and misc. I like finding how things break and then explaining how to fix them.
+I study Informatics Engineering at ISEP in Porto, and this semester I'm on Erasmus at Aarhus University. Outside class I play CTFs with CHAØS, ISEP's team, mostly forensics, reverse engineering and pwn.
 
-**Available from February 2027** for a curricular internship in cybersecurity, February to June 2027.
+I'm available from February 2027 for a curricular internship in cybersecurity, February to June.
 
-Reach me at [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com) or on LinkedIn at [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogonçalves070906).
-
-## Competitions and certifications
-
-| Result | What | When |
-|---|---|---|
-| **Junior top 10** | Cybersecurity Challenge PT. One of the 15 juniors selected for the national bootcamp (National Cybersecurity Centre) | Jul 2026 |
-| **8th of 300+ teams** | upCTF 2026 with CHAØS, my first CTF | Mar 2026 |
-| **Certified** | Cisco Certified Network Associate (CCNA) | Aug 2026 |
-| **Best Project Award** | *All Aboard*, ISEP's first-year integrative project | 2025 |
-
-Training completed at ISEP Academy: CEH v13 and AWS Cloud Practitioner.
-
-## On GitHub
+[Email me](mailto:nunogoncalves070906@gmail.com) or find me on LinkedIn at [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906).
 
 <p>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/overview.svg" alt="Account overview and a year of contributions as an isometric calendar"/>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/languages.svg" alt="Languages I use most, counted from the lines I authored"/>
-</p>
-<p>
-  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/habits.svg" alt="When I commit, by hour and by weekday"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/overview.svg" alt="My GitHub account in numbers, with a year of contributions drawn as an isometric calendar"/>
   <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/achievements.svg" alt="GitHub achievements"/>
 </p>
 
-Most of my work sits in private course repositories, so these cards include private contributions, and the language card counts only lines I wrote myself. They are redrawn every day by [lowlighter/metrics](https://github.com/lowlighter/metrics).
+## So far
+
+- Cybersecurity Challenge PT 2026: one of the 15 juniors selected for the national bootcamp (National Cybersecurity Centre), finished in the junior top 10
+- upCTF 2026: 8th of more than 300 teams with CHAØS, in my first CTF
+- Cisco CCNA, certified in August 2026
+- Best Project Award at ISEP for *All Aboard*, the first-year integrative project
+- CEH v13 and AWS Cloud Practitioner training completed at ISEP Academy
+
+## What I work with
+
+<img src="https://skillicons.dev/icons?i=java,c,py,kotlin,cpp,linux,kali,docker,git,aws&theme=light" alt="Java, C, Python, Kotlin, C++, Linux, Kali Linux, Docker, Git, AWS"/>
+
+On the security side I use Wireshark, Burp Suite and Hydra, and the CCNA covers routing and switching.
+
+<p>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/code.svg" alt="The languages I use most and when I tend to commit"/>
+  <img align="top" width="49%" src="https://raw.githubusercontent.com/NunoGoncalves06/NunoGoncalves06/metrics-renders/repositories.svg" alt="My public repositories: Wakecast and Alchemist's Arsenal"/>
+</p>
 
 ## Projects
 
-In public: [Wakecast](https://github.com/NunoGoncalves06/Wakecast), an Android alarm that reads out a morning briefing when you dismiss it, and [Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal), a Unity game.
+[Wakecast](https://github.com/NunoGoncalves06/Wakecast) is an Android alarm that reads out a morning briefing when you dismiss it. [Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal) is a Unity game.
 
-The coursework and competition repositories are private, so this table says what each one is and how much of it was mine:
+My coursework and competition repositories are private. Open the list below to see what each one is and how much of it I wrote.
+
+<details>
+<summary>Coursework and competition projects</summary>
 
 <!-- PROJECTS:START -->
 | Project | What it is | Main languages | My commits | When |
@@ -52,12 +55,6 @@ The coursework and competition repositories are private, so this table says what
 | **QuintinhaVirtual website** | Business-card website for a fictional organic farm shop, customised from an HTML template | HTML, SCSS, JavaScript | 13 of 15 (top contributor), team of 2 | 2024/25, 1st semester |
 <!-- PROJECTS:END -->
 
-## What I work with
+</details>
 
-| | |
-|---|---|
-| **Security** | CTF forensics, reverse engineering and pwn. Wireshark, Burp Suite, Hydra, Kali Linux |
-| **Networking** | Routing, switching and network fundamentals (CCNA) |
-| **Programming** | Java, C, Python, Kotlin, C++ |
-| **Platforms** | Linux, Docker, Git, GitHub and GitLab, AWS fundamentals |
-| **Languages** | Portuguese (native), English (C1, IELTS Academic) |
+<sub>Cards drawn daily by <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a>.</sub>
