@@ -64,13 +64,6 @@ Most of my coursework and competition projects live in private repositories, so 
 | Networking | Routing, switching and network fundamentals (CCNA) |
 | Languages | Portuguese (native), English (C1, IELTS Academic) |
 
-## Contribution activity
-
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/snake-dark.svg"/>
-  <img src="assets/snake.svg" width="100%" alt="Snake eating my contribution graph"/>
-</picture>
-
 ## Education and experience
 
 - BSc in Informatics Engineering at ISEP, Porto, 2024 to 2027, with an Erasmus semester at Aarhus University in autumn 2026
