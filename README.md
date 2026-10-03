@@ -9,14 +9,24 @@ I'm available from February 2027 for a curricular internship in cybersecurity, F
 
 ## Certifications
 
-<p>
-  <img src="https://img.shields.io/badge/CCNA-certified%202026-35d07f?style=for-the-badge&labelColor=000000" alt="CCNA: certified 2026"/>
-  <img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-35d07f?style=for-the-badge&labelColor=000000" alt="IELTS Academic: English C1"/>
-  <img src="https://img.shields.io/badge/CEH%20v13-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="CEH v13: training completed"/>
-  <img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-1f7a4d?style=for-the-badge&labelColor=000000" alt="AWS Cloud Practitioner: training completed"/>
-</p>
-
-Cisco CCNA certified in August 2026. The CEH v13 and AWS Cloud Practitioner courses were at ISEP Academy.
+<table>
+  <tr>
+    <td><img src="https://img.shields.io/badge/CCNA-000000?style=for-the-badge" alt="CCNA"/><img src="https://img.shields.io/badge/certified-35d07f?style=for-the-badge" alt="certified"/></td>
+    <td>Cisco Certified Network Associate, certified in August 2026</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/IELTS%20Academic-000000?style=for-the-badge" alt="IELTS Academic"/><img src="https://img.shields.io/badge/English%20C1-35d07f?style=for-the-badge" alt="English C1"/></td>
+    <td>English language certificate. Portuguese is my native language</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/CEH%20v13-000000?style=for-the-badge" alt="CEH v13"/><img src="https://img.shields.io/badge/training%20completed-1f7a4d?style=for-the-badge" alt="training completed"/></td>
+    <td>Certified Ethical Hacker course at ISEP Academy, February to July 2026</td>
+  </tr>
+  <tr>
+    <td><img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-000000?style=for-the-badge" alt="AWS Cloud Practitioner"/><img src="https://img.shields.io/badge/training%20completed-1f7a4d?style=for-the-badge" alt="training completed"/></td>
+    <td>AWS fundamentals course at ISEP Academy, October 2025 to January 2026</td>
+  </tr>
+</table>
 
 ## Competitions and awards
 
