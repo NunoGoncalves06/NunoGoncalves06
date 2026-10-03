@@ -50,5 +50,5 @@ jobs:
             .ps1-path { font-size: 0; }
             .ps1-path::before { content: "nuno@kali"; font-size: 8.5px; color: #35d07f; }
             .ps1-location, .diff { color: #7dffb0; }
-            .isocalendar svg { filter: none; margin: -34px 0 -26px !important; }
+            .isocalendar svg { filter: invert(1) hue-rotate(180deg); margin: -30px 0 0 !important; }
             :root { --color-calendar-graph-day-bg: #0c2118; --color-calendar-graph-day-border: #123524; --color-calendar-graph-day-L1-bg: #1c6b45; --color-calendar-graph-day-L2-bg: #27a567; --color-calendar-graph-day-L3-bg: #35d07f; --color-calendar-graph-day-L4-bg: #7dffb0; }
