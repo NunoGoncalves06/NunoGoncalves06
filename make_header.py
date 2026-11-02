@@ -18,7 +18,6 @@ def find_edge() -> str | None:
 
 NAME = "Nuno Gonçalves"
 TITLE = "Offensive security"
-LINES = ("Informatics Engineering student at ISEP, Porto.",)
 
 # bg, title ink, name/body ink, red, cyan (light variants darkened for AA on the light background)
 THEMES = {
@@ -49,15 +48,13 @@ def contrast(a: str, b: str) -> float:
 def build_svg(theme: str) -> str:
     t = THEMES[theme]
     font = base64.b64encode(FONT.read_bytes()).decode()
-    body = "".join(f'<text x="60" y="{y}" class="line">{s}</text>' for y, s in zip((232,), LINES))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
 <title id="t">{NAME}: {TITLE}</title>
-<desc id="d">Profile header for {NAME}, {TITLE}. {" ".join(LINES)}</desc>
+<desc id="d">Profile header for {NAME}, {TITLE}.</desc>
 <style>
 @font-face {{ font-family: "Barlow Condensed"; font-weight: 800; src: url(data:font/woff2;base64,{font}) format("woff2"); }}
 .name {{ font: 500 32px "Segoe UI", Helvetica, Arial, sans-serif; fill: {t["body"]}; }}
 .title {{ font: 800 130px "Barlow Condensed", Impact, sans-serif; text-transform: uppercase; }}
-.line {{ font: 400 20px "Segoe UI", Helvetica, Arial, sans-serif; fill: {t["body"]}; }}
 #r {{ fill: {t["red"]}; transform: translateX(-2px); }}
 #c {{ fill: {t["cyan"]}; transform: translateX(2px); }}
 #m {{ fill: {t["ink"]}; }}
@@ -80,11 +77,10 @@ def build_svg(theme: str) -> str:
 </style>
 <rect id="bg" width="1200" height="300" fill="{t["bg"]}"/>
 <rect x="0" y="0" width="8" height="300" fill="{t["red"]}"/>
-<text x="60" y="60" class="name">{NAME}</text>
-<text id="c" x="60" y="175" class="title">{TITLE}</text>
-<text id="r" x="60" y="175" class="title">{TITLE}</text>
-<text id="m" x="60" y="175" class="title">{TITLE}</text>
-{body}
+<text x="60" y="105" class="name">{NAME}</text>
+<text id="c" x="60" y="220" class="title">{TITLE}</text>
+<text id="r" x="60" y="220" class="title">{TITLE}</text>
+<text id="m" x="60" y="220" class="title">{TITLE}</text>
 </svg>
 '''
 

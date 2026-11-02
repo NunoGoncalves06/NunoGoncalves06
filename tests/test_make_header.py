@@ -15,6 +15,7 @@ def test_both_variants_embed_the_font_and_title():
         assert "@font-face" in svg and "base64," in svg
         assert "Offensive security" in svg and "Nuno Gonçalves" in svg
         assert "<title" in svg and "<desc" in svg
+        assert "Informatics Engineering" not in svg
         assert "—" not in svg and "–" not in svg
 
 

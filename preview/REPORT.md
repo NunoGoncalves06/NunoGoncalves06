@@ -8,7 +8,7 @@ Branch `profile-refresh`. Nothing is pushed or edited on GitHub. Site column: `p
 |---|---|---|---|
 | Name | Nuno Gonçalves (h1, App.tsx) | Header SVG title and alt text | equal |
 | Hero title | Offensive security | Header SVG title | equal |
-| Hero line | Informatics Engineering student at ISEP, Porto. Looking for a curricular internship from February to June 2027. | Same sentence in the opening paragraph (the SVG shows only the first sentence) | equal |
+| Hero line | Informatics Engineering student at ISEP, Porto. Looking for a curricular internship from February to June 2027. | Same sentence in the opening paragraph (the header no longer repeats it) | equal |
 | Highlight 1 | CCNA certified / Cisco, August 2026 | CCNA certified, Cisco, August 2026 | equal |
 | Highlight 2 | 8th of 300+ teams / upCTF 2026, my first CTF | 8th of 300+ teams, upCTF 2026, my first CTF | equal |
 | Highlight 3 | Junior top 10 / National bootcamp, National Cybersecurity Centre, 2026 | Junior top 10, National bootcamp, National Cybersecurity Centre, 2026 | equal |
@@ -117,4 +117,4 @@ SpotCast, Wakecast, NunoGoncalves06.github.io.
 
 TO BE FILLED BY THE CONTROLLER (browser pane checks of `preview/light.html` and `preview/dark.html`).
 
-Files from `preview/shoot.py` (headless Edge): `preview/shots/light-1440.png`, `dark-1440.png`, `light-375.png`, `dark-375.png`. Edge headless will not lay out narrower than about 492 px, so each page is shown inside an iframe of the exact width. The scripted overflow check read scrollWidth equal to innerWidth for all four (1440/1440 and 375/375). The controller should still confirm in the browser pane.
+Files from `preview/shoot.py` (headless Edge): `preview/shots/light-1440.png`, `dark-1440.png`, `light-375.png`, `dark-375.png`. Edge headless will not lay out narrower than about 492 px, so each page is shown inside an iframe of the exact width. The header SVGs now carry only the name and title. The scripted overflow check read scrollWidth equal to innerWidth for all four (1440/1440 and 375/375). The controller should still confirm in the browser pane.
