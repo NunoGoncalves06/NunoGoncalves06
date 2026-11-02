@@ -55,6 +55,8 @@ No P0, P1 or P2 issues.
 
 ## Fixes made
 
-None needed for the critique. Two controller-ruled fixes were made first: header `<img>` alt is now "Nuno Gonçalves, offensive security." and the double blank line in Contact is gone.
+Fix round 1 (controller ruling): all 25 skill badges are now one uniform 2b2b31 chip; only the logo carries colour (white for Wireshark, Python and C++, whose brand colours are under 3:1 on 2b2b31), badges without a logo are single-segment so there is no empty label stub, and row labels got `valign="middle"`. This removes the rainbow, so the P3 on heavy badges is now only the 11 px text limit.
+
+Otherwise none needed for the critique. Two controller-ruled fixes were made first: header `<img>` alt is now "Nuno Gonçalves, offensive security." and the double blank line in Contact is gone.
 
 Questions skipped: fewer than 3 priority issues rated above P3 (3 P3 notes, none blocking).

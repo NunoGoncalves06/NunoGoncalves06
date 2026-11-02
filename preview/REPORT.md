@@ -57,7 +57,7 @@ Only the project order is an accepted difference. Every other row marked differs
 | 200 | https://www.credly.com/badges/8c053a69-a852-435b-9cd2-595bfd291f4f | ok |
 | 200 | https://www.credly.com/users/nuno-goncalves.ad1fc5dd | ok |
 | 999 | https://www.linkedin.com/in/nunogon%C3%A7alves070906 | bot-blocked, manual check (LinkedIn answers 999 to bots) |
-| 200 | 29 shields.io badge URLs (4 certification, 25 skill, style=flat) | all ok; all 13 that request a logo return an SVG with an embedded image |
+| 200 | 29 shields.io badge URLs (4 certification, 25 skill, style=flat). Skill badges are one quiet chip each: `badge/-<item>-2b2b31?style=flat&logo=<slug>&logoColor=<brand hex or white>` with a logo, `badge/<item>-2b2b31?style=flat` without | all ok (curl --max-time 60); all 13 logo badges return an SVG with an embedded image, the 12 without a logo have none |
 
 ## 3. Tests and checker
 
