@@ -4,20 +4,17 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 from check_readme import check  # noqa: E402
 
-SITE = '''
-export const featured: Project = {
+NAMES = ["Big Net", "Other", "P3", "P4", "P5", "P6", "P7"]
+SITE = """export const featured: Project = {
   name: "Big Net",
   stack: ["A"],
   summary:
-    "A network summary.",
+    "Summary of Big Net.",
 }
 export const projects: Project[] = [
-  { name: "Other", summary: "Other summary.", link: "x" },
-  { name: "Unused", summary: "Never shown.", },
-]
-'''
+""" + "".join(f'  {{ name: "{n}", summary: "Summary of {n}.", link: "x" }},' + chr(10) for n in NAMES[1:]) + "]"
 
-GOOD = '''<picture>
+GOOD = """<picture>
 <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
 <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
 <img src="assets/header-dark.svg" width="100%" alt="Header">
@@ -25,14 +22,12 @@ GOOD = '''<picture>
 
 Hello. See [Other](https://github.com/NunoGoncalves06/SpotCast).
 
-Big Net: A network summary.
-
-Other: Other summary.
+""" + (chr(10) * 2).join(f"{n}: Summary of {n}." for n in NAMES) + """
 
 | a | b |
 |---|---|
 | 1 | 2 |
-'''
+"""
 
 
 def problems(extra="", site=SITE):
@@ -91,9 +86,29 @@ def test_requires_picture_with_both_headers():
 
 
 def test_requires_site_summaries_verbatim():
-    bad = GOOD.replace("A network summary.", "A changed summary.")
+    bad = GOOD.replace("Summary of Big Net.", "A changed summary.")
     assert any("Big Net" in p for p in check(bad, SITE))
-    bad = GOOD.replace("Other summary.", "Different.")
+    bad = GOOD.replace("Summary of Other.", "Different.")
     assert any("Other" in p for p in check(bad, SITE))
-    # a project whose name is absent is not required
-    assert not any("Unused" in p for p in check(GOOD, SITE))
+
+
+def test_requires_dark_source():
+    bad = GOOD.replace('srcset="assets/header-dark.svg"', 'srcset="assets/other.svg"', 1)
+    assert any("dark" in p for p in check(bad, SITE))
+
+
+def test_flags_unparseable_site_data():
+    assert any("data.ts" in p for p in check(GOOD, "export const x = 1"))
+    assert any("data.ts" in p for p in check(GOOD, SITE.replace('name: "P7"', "nome: 'P7'")))
+
+
+def test_flags_project_missing_from_readme():
+    bad = GOOD.replace("P7: Summary of P7.", "")
+    assert any("P7" in p and "missing" in p for p in check(bad, SITE))
+
+
+def test_omitted_allowlist_excuses_missing_project(monkeypatch):
+    import check_readme
+    monkeypatch.setattr(check_readme, "OMITTED_PROJECTS", {"P7"})
+    bad = GOOD.replace("P7: Summary of P7.", "")
+    assert check(bad, SITE) == []

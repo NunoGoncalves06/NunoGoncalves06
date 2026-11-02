@@ -4,6 +4,8 @@ import sys
 from pathlib import Path
 
 PUBLIC_REPOS = {"NunoGoncalves06", "NunoGoncalves06.github.io", "SpotCast", "Wakecast", "alchemists-arsenal"}
+MIN_PROJECTS = 7  # featured plus the six in projects
+OMITTED_PROJECTS: set[str] = set()  # data.ts projects deliberately left out of the README
 EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿⭐⭕️‍]")
 CTF_WORDS = re.compile(r"\b(forensics|reverse engineering|pwn|misc)\b", re.I)
 # shortcut: regex over data.ts, not a TS parser; fine while summaries stay plain double-quoted strings.
@@ -42,8 +44,14 @@ def check(readme: str, site_data: str) -> list[str]:
                 out.append(f"header <picture> lacks the {theme} source")
         if not re.search(r"<img\b(?=[^>]*\balt=\"[^\"]+\")(?=[^>]*width=\"100%\")", p):
             out.append("header <img> needs alt text and width=\"100%\"")
-    for name, summary in PROJECT.findall(site_data):
-        if name in readme and summary not in readme:
+    found = PROJECT.findall(site_data)
+    if len(found) < MIN_PROJECTS:
+        out.append(f"parsed only {len(found)} projects from data.ts, expected at least {MIN_PROJECTS}")
+    for name, summary in found:
+        if name not in readme:
+            if name not in OMITTED_PROJECTS:
+                out.append(f"project {name} from data.ts is missing from the README")
+        elif summary not in readme:
             out.append(f"summary for {name} is not verbatim from data.ts")
     return out
 
