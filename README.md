@@ -1,80 +1,64 @@
-<img src="assets/header.svg" width="100%" alt="Nuno Gonçalves. Informatics engineering student at ISEP. CTF player with CHAØS."/>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
+  <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
+  <img src="assets/header-dark.svg" width="100%" alt="Nuno Gonçalves, offensive security. Informatics engineering student at ISEP, Porto.">
+</picture>
 
-I study Informatics Engineering at ISEP in Porto, and this semester I'm on Erasmus at Aarhus University. Outside class I play CTFs with CHAØS, ISEP's team, mostly forensics, reverse engineering and pwn.
+Informatics Engineering student at ISEP, Porto. Looking for a curricular internship from February to June 2027.
 
-I'm available from February 2027 for a curricular internship in cybersecurity, February to June.
+My site: [nunogoncalves06.github.io](https://nunogoncalves06.github.io)
 
-<a href="mailto:nunogoncalves070906@gmail.com"><img src="https://img.shields.io/badge/Email-nunogoncalves070906@gmail.com-27a567?style=for-the-badge&labelColor=000000" alt="Email: nunogoncalves070906@gmail.com"/></a>
-<a href="https://www.linkedin.com/in/nunogon%C3%A7alves070906"><img src="https://img.shields.io/badge/LinkedIn-nunogonçalves070906-27a567?style=for-the-badge&labelColor=000000" alt="LinkedIn: www.linkedin.com/in/nunogonçalves070906"/></a>
+## Highlights
 
-## Certifications
+- **CCNA certified**: Cisco, August 2026
+- **8th of 300+ teams**: upCTF 2026, my first CTF
+- **Junior top 10**: one of the 15 juniors selected for the national bootcamp, finished in the junior top 10 (National Cybersecurity Centre, 2026)
 
-<table>
-  <tr>
-    <td width="62%"><img src="https://img.shields.io/badge/CCNA-000000?style=for-the-badge" alt="CCNA"/><img src="https://img.shields.io/badge/certified-35d07f?style=for-the-badge" alt="certified"/></td>
-    <td>Cisco Certified Network Associate, certified in August 2026</td>
-  </tr>
-  <tr>
-    <td width="62%"><img src="https://img.shields.io/badge/IELTS%20Academic-000000?style=for-the-badge" alt="IELTS Academic"/><img src="https://img.shields.io/badge/English%20C1-35d07f?style=for-the-badge" alt="English C1"/></td>
-    <td>English language certificate. Portuguese is my native language</td>
-  </tr>
-  <tr>
-    <td width="62%"><img src="https://img.shields.io/badge/CEH%20v13-000000?style=for-the-badge" alt="CEH v13"/><img src="https://img.shields.io/badge/training%20completed-1f7a4d?style=for-the-badge" alt="training completed"/></td>
-    <td>Certified Ethical Hacker course at ISEP Academy, February to July 2026</td>
-  </tr>
-  <tr>
-    <td width="62%"><img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-000000?style=for-the-badge" alt="AWS Cloud Practitioner"/><img src="https://img.shields.io/badge/training%20completed-1f7a4d?style=for-the-badge" alt="training completed"/></td>
-    <td>AWS fundamentals course at ISEP Academy, October 2025 to January 2026</td>
-  </tr>
-</table>
-
-## Competitions and awards
-
-- Cybersecurity Challenge PT 2026: one of the 15 juniors selected for the national bootcamp (National Cybersecurity Centre), finished in the junior top 10
-- upCTF 2026: 8th of more than 300 teams with CHAØS, in my first CTF
-- Best Project Award at ISEP for *All Aboard*, the first-year integrative project
-
-## On GitHub
-
-<p align="center">
-  <img width="100%" src="metrics.terminal.svg" alt="A Kali-style terminal showing my profile facts next to an ASCII dragon, then my GitHub activity"/>
-</p>
+[![CCNA](https://img.shields.io/badge/CCNA-certified-ff2a4f?style=for-the-badge&labelColor=000000)](https://www.credly.com/users/nuno-goncalves.ad1fc5dd)
+[![IELTS Academic](https://img.shields.io/badge/IELTS%20Academic-English%20C1-ff2a4f?style=for-the-badge&labelColor=000000)](https://www.credly.com/users/nuno-goncalves.ad1fc5dd)
+[![CEH v13](https://img.shields.io/badge/CEH%20v13-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000)](https://www.credly.com/users/nuno-goncalves.ad1fc5dd)
+[![AWS Cloud Practitioner](https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000)](https://www.credly.com/users/nuno-goncalves.ad1fc5dd)
 
 ## Projects
 
-Most of my coursework and competition projects live in private repositories, so here's what I built and how much of it was mine. The two public ones link to their code.
+### Three-site enterprise network
 
-| Project | What it is | Main languages | My commits | When |
-|---|---|---|---|---|
-| **[Wakecast](https://github.com/NunoGoncalves06/Wakecast)** | Android alarm with a morning briefing: weather, your day and the news read out when you dismiss the alarm. On-device voices, no accounts | Java | 21 of 21, solo | 2026 |
-| **[Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal)** | Unity game project | C# | 3 of 6, team of 2 | 2026 |
-| **IoT sensor node** | Group IoT project in its design phase: an ESP32-C6 board with a VL6180X distance sensor, publishing readings over MQTT | ESP32-C6, MQTT | team member, in progress | 2026 |
-| **AISafe** | Flight control management prototype: Java console apps, a flight-plan DSL parsed with ANTLR, a C simulation engine, and user roles with security clearances | Java, C, Python | 117 of 627, team of 5 | 2025/26, 4th semester |
-| **LAPR3 integrative project** | Java application with C, C++ and Assembly modules and a PL/SQL database, including algorithm complexity analysis | Java, C, C++ | 167 of 665, team of 4 | 2025/26, 3rd semester |
-| **JPA persistence demo** | Java console app persisting its domain objects with JPA (EclipseLink) on an H2 database, built for the EAPLI course | Java | 2 of 4, team of 2 | 2025/26 |
-| **CCNA 3 enterprise network** | Final project of CCNA 3 (ENSA), built on real Cisco equipment and awarded the maximum score. A three-site network with VLANs, OSPF, HSRP, an IPsec VPN and IP telephony, plus Ansible playbooks that apply base configuration to the routers and back them up | Cisco IOS, Ansible, YAML | team member | 2025/26 |
-| **European stations dataset** | Python collector that merges railway stations and airports across Europe from OpenStreetMap and OurAirports into one CSV, with duplicate detection (built with Copilot's help) | Python | 3 of 3, solo | 2025 |
-| **All Aboard (Best Project Award)** | First-year integrative project covering every first-year module: a Java application built through a full development process (requirements, OO analysis and design, unit tests with coverage) plus data analysis in Jupyter | Java, Python | 115 of 539, team of 5 | 2024/25, 2nd semester |
-| **Sueca bot tournament (ENEI)** | Competition bots for Sueca, the Portuguese card game, running in Docker containers against other teams | Java, JavaScript, Python | top contributor | 2025 |
-| **Face identification with Eigenfaces** | Face identification and image reconstruction using Eigenfaces (PCA), written in Java | Java | 82 of 145 (top contributor), team of 5 | 2024/25, 1st semester |
-| **EV fleet charging analysis** | Java console program that reads electric-vehicle mileage data and works out daily recharges, battery levels, charging costs and above-average vehicles (APROG assignment) | Java | 39 of 49 (top contributor), team of 2 | 2024/25, 1st semester |
-| **QuintinhaVirtual website** | Business-card website for a fictional organic farm shop, customised from an HTML template | HTML, SCSS, JavaScript | 13 of 15 (top contributor), team of 2 | 2024/25, 1st semester |
+The CCNA 3 final project: a company network across a headquarters and two branches, built by a team on real Cisco routers, switches and access points. It got the maximum score.
 
-## What I work with
+Cisco IOS, OSPF, IPsec, ACLs, Ansible. The code is in a private repository.
 
-| Area | Tools |
-|---|---|
-| Programming | <img src="https://skillicons.dev/icons?i=java,kotlin,py,c,cpp,cs" alt="Java, Kotlin, Python, C, C++, C#"/> |
-| Cloud and tooling | <img src="https://skillicons.dev/icons?i=aws,linux,kali,docker,ansible,git,github,gitlab" alt="AWS, Linux, Kali Linux, Docker, Ansible, Git, GitHub, GitLab"/> |
-| Web and game dev | <img src="https://skillicons.dev/icons?i=angular,unity" alt="Angular, Unity"/> |
-| Security | Wireshark, Burp Suite, Hydra and Ghidra. CTFs, mostly forensics, reverse engineering, pwn and misc. CEH training completed |
-| Networking | Routing, switching and network fundamentals (CCNA) |
-| Languages | Portuguese (native), English (C1, IELTS Academic) |
+### AISafe
 
-## Education and experience
+A flight control management prototype: a flight-plan language parsed with ANTLR, a simulation engine in C, and user roles with security clearances.
 
-- BSc in Informatics Engineering at ISEP, Porto, 2024 to 2027, with an Erasmus semester at Aarhus University in autumn 2026
-- CHAØS, ISEP's CTF team: member since February 2026
-- NEI-ISEP, ISEP's informatics student association: External Relations, October 2025 to July 2026. I contacted companies about sponsorships and helped organise GameJam and CodeSpring
+Worked on every part of the project with my team, including designing the user roles and clearance levels and implementing the permission checks. The code is in a private repository.
 
-<sub>Cards drawn daily by <a href="https://github.com/lowlighter/metrics">lowlighter/metrics</a>.</sub>
+### IoT sensor node
+
+An ESP32-C6 board with a distance sensor publishing readings over MQTT, in its design phase with my group.
+
+### SpotCast and Wakecast
+
+[SpotCast](https://github.com/NunoGoncalves06/SpotCast): An Android app for Mobile Application Development at Aarhus University. Save outdoor spots and get a Go, Maybe or Skip for each activity from that spot's forecast, with unit tests for the rules and the API clients.
+
+[Wakecast](https://github.com/NunoGoncalves06/Wakecast): An alarm that reads you a morning briefing when you dismiss it: the weather, your calendar, your to-dos and the news. It runs entirely on the phone, with no account and no tracking.
+
+### More
+
+- **All Aboard**: The first-year integrative project that won ISEP's Best Project Award: a Java application built from requirements to tested code, plus data analysis in Jupyter.
+- **Sueca bot tournament**: Bots for Sueca, the Portuguese card game, running in Docker containers against other teams at ENEI.
+- **[Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal)**: Unity game in C#, built on my own.
+
+## Skills
+
+- **Security**: Kali Linux, Nmap, Wireshark, Burp Suite, Hydra, Ghidra
+- **Networks**: Cisco IOS, VLANs and STP, OSPF, NAT and ACLs, IPsec VPN, Ansible
+- **Code**: Java, C, Python, Kotlin, C++, C#
+- **Platforms**: Linux, Docker, Git and GitLab, Android, AWS fundamentals
+
+## Contact
+
+- Email: [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com)
+- LinkedIn: [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906)
+- Credly: [credly.com/users/nuno-goncalves.ad1fc5dd](https://www.credly.com/users/nuno-goncalves.ad1fc5dd)
+- Site: [nunogoncalves06.github.io](https://nunogoncalves06.github.io)
