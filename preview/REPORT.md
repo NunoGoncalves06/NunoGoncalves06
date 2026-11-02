@@ -1,6 +1,6 @@
 # Profile preview and verification report
 
-Branch `profile-refresh`. Nothing is pushed or edited on GitHub. Site column: `portfolio/src/data.ts`, `App.tsx` and the live bundle (https://nunogoncalves06.github.io, `assets/index-BKs1rZvI.js`), where every data.ts string used below was found by exact match.
+Branch `design/quiet-signal` (Quiet Signal restyle on top of `profile-refresh`). Nothing is pushed or edited on GitHub. Site column: `portfolio/src/data.ts`, `App.tsx` and the live bundle (https://nunogoncalves06.github.io, `assets/index-BKs1rZvI.js`), where every data.ts string used below was found by exact match.
 
 ## 1. Fact comparison: site vs GitHub
 
@@ -46,25 +46,22 @@ Only the project order is an accepted difference. Every other row marked differs
 
 ## 2. Link check
 
-`curl -s -o /dev/null -w "%{http_code}" -L --max-time 20 <url>` on every URL in README.md, repo-changes.json and repo-readmes/*.md. mailto links are not curled. No link points to a private repo (Project-Work-2026-AU, aniversario-do-amor-da-minha-vida, european-stations-data, DF_1241032_1240973); the only repo links are SpotCast, Wakecast and alchemists-arsenal.
+`curl -s -o /dev/null -w "%{http_code}" -L --max-time 30 <url>` on every URL in README.md, repo-changes.json and repo-readmes/*.md. mailto links are not curled. No link points to a private repo.
 
 | Code | URL | Result |
 |---|---|---|
 | 200 | https://github.com/NunoGoncalves06/SpotCast | ok |
 | 200 | https://github.com/NunoGoncalves06/Wakecast | ok |
 | 200 | https://github.com/NunoGoncalves06/alchemists-arsenal | ok |
-| 200 | https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000 | ok |
-| 200 | https://img.shields.io/badge/CCNA-certified-ff2a4f?style=for-the-badge&labelColor=000000 | ok |
-| 200 | https://img.shields.io/badge/CEH%20v13-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000 | ok |
-| 200 | https://img.shields.io/badge/IELTS%20Academic-English%20C1-ff2a4f?style=for-the-badge&labelColor=000000 | ok |
 | 200 | https://nunogoncalves06.github.io | ok |
 | 200 | https://www.credly.com/badges/8c053a69-a852-435b-9cd2-595bfd291f4f | ok |
 | 200 | https://www.credly.com/users/nuno-goncalves.ad1fc5dd | ok |
 | 999 | https://www.linkedin.com/in/nunogon%C3%A7alves070906 | bot-blocked, manual check (LinkedIn answers 999 to bots) |
+| 200 | 29 shields.io badge URLs (4 certification, 25 skill, style=flat) | all ok; all 13 that request a logo return an SVG with an embedded image |
 
-## 3. check_readme.py
+## 3. Tests and checker
 
-`python check_readme.py README.md ../portfolio/src/data.ts` printed nothing and exited 0 (no rule violations).
+`python -m pytest -q`: 46 passed. `python check_readme.py README.md ../portfolio/src/data.ts` printed nothing and exited 0.
 
 ## 4. Exact change list
 
@@ -81,27 +78,9 @@ gh repo edit NunoGoncalves06/NunoGoncalves06 --homepage https://nunogoncalves06.
 ### 4.2 Profile repo files to push (`git diff --stat cf080cb..HEAD`, `preview/` excluded)
 
 ```
- .github/workflows/metrics.yml             |   56 -
- README.md                                 |  124 +-
- apply_repo_changes.py                     |   51 +
- assets/header-dark.svg                    |   36 +
- assets/header-light.svg                   |   36 +
- assets/header.svg                         |   18 -
- assets/make_header.py                     |   40 -
- check_readme.py                           |   63 +
- make_header.py                            |  117 ++
- metrics.terminal.svg                      | 1911 -----------------------------
- repo-changes.json                         |   27 +
- repo-readmes/NunoGoncalves06.github.io.md |    4 +
- repo-readmes/SpotCast.md                  |    8 +
- repo-readmes/Wakecast.md                  |    6 +
- tests/test_check_readme.py                |  114 ++
- tests/test_make_header.py                 |   55 +
- tests/test_repo_changes.py                |   53 +
- 17 files changed, 625 insertions(+), 2094 deletions(-)
 ```
 
-The push also deletes `.github/workflows/metrics.yml`, `metrics.terminal.svg`, `assets/header.svg` and `assets/make_header.py` (replaced by the two new headers and `make_header.py`).
+The push also deletes `.github/workflows/metrics.yml`, `metrics.terminal.svg`, `assets/header.svg` and `assets/make_header.py` (replaced by the two headers, four section icons, `make_header.py` and `make_icons.py`). Preview HTML is not part of the push.
 
 ### 4.3 README splices in other repos (files in `repo-readmes/`)
 
@@ -113,8 +92,15 @@ The push also deletes `.github/workflows/metrics.yml`, `metrics.terminal.svg`, `
 
 SpotCast, Wakecast, NunoGoncalves06.github.io.
 
-## 5. Screenshots (controller)
+## 5. Screenshots
 
-Controller check in the browser pane (dark.html at 375 px): scrollWidth 375 = innerWidth 375, all 4 images loaded, nothing cut. The four Edge screenshots were also read by eye: header sharp in both themes, badges full-size on one line each at 375 px, no clipped text. Tests: 37 passed; `check_readme.py` exit 0.
+Files from `preview/shoot.py` (headless Edge, `<details>` forced open in the preview HTML only): `preview/shots/light-1440.png`, `dark-1440.png`, `light-375.png`, `dark-375.png`. Edge headless will not lay out narrower than about 492 px, so each page sits in an iframe of the exact width.
 
-Files from `preview/shoot.py` (headless Edge): `preview/shots/light-1440.png`, `dark-1440.png`, `light-375.png`, `dark-375.png`. Edge headless will not lay out narrower than about 492 px, so each page is shown inside an iframe of the exact width. The header SVGs now carry only the name and title. The scripted overflow check read scrollWidth equal to innerWidth for all four (1440/1440 and 375/375). The controller should still confirm in the browser pane.
+| Shot | scrollWidth | innerWidth | Result |
+|---|---|---|---|
+| light 1440 | 1440 | 1440 | OK |
+| light 375 | 375 | 375 | OK |
+| dark 1440 | 1440 | 1440 | OK |
+| dark 375 | 375 | 375 | OK |
+
+All four were read by eye. Nothing is cut at 375 px. The smallest text on the phone is the header name at 28 SVG units scaled by 345/800, about 12.1 px; body text is 16 px. Skill badges are 20 px shields with about 11 px text, a known shields.io limit. Critique: `preview/CRITIQUE-quiet-signal.md`. The controller should still confirm in the browser pane.

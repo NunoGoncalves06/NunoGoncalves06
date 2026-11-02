@@ -1,7 +1,7 @@
 <p><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
-  <img src="assets/header-dark.svg" width="100%" alt="Nuno Gonçalves, offensive security. Informatics engineering student at ISEP, Porto.">
+  <img src="assets/header-dark.svg" width="100%" alt="Nuno Gonçalves, offensive security.">
 </picture></p>
 
 Informatics Engineering student at ISEP, Porto. Looking for a curricular internship from February to June 2027.
@@ -65,7 +65,6 @@ An alarm that reads you a morning briefing when you dismiss it: the weather, you
 </table>
 
 ## <img src="assets/icon-mail.svg" width="20" height="20" alt=""> Contact
-
 
 - Email: [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com)
 - LinkedIn: [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906)

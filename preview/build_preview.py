@@ -42,6 +42,7 @@ def build() -> None:
         # An inline <svg> cannot reuse the <picture> alt text, so wrap it with role/aria-label.
         header = f'<div role="img" aria-label="{alt}" style="width:100%">{svg}</div>'
         body = PICTURE.sub(lambda _m: header, html, count=1)
+        body = body.replace('src="assets/', 'src="../assets/').replace("<details>", "<details open>")  # preview only, never README
         page = (f'<!doctype html><html lang="en" data-theme="{name}"><head><meta charset="utf-8">'
                 f'<meta name="viewport" content="width=device-width,initial-scale=1">'
                 f'<meta name="color-scheme" content="{t["scheme"]}"><title>Preview {name}</title>'
