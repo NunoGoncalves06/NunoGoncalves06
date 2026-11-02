@@ -27,6 +27,12 @@ THEMES = {
 PICTURE = re.compile(r"<picture>.*?</picture>", re.S)
 
 
+def preview_only(body: str) -> str:
+    """Point asset paths up one folder and open every <details>; the README itself is never touched."""
+    body = re.sub(r"""\b(src|srcset)=(["'])assets/""", r"\1=\2../assets/", body)
+    return re.sub(r"<details(?![^>]*\bopen\b)", "<details open", body)
+
+
 def render(readme: Path) -> str:
     r = subprocess.run(
         ["gh", "api", "markdown", "-f", "mode=gfm", "-f", "context=NunoGoncalves06/NunoGoncalves06", "-F", f"text=@{readme}"],
@@ -42,7 +48,7 @@ def build() -> None:
         # An inline <svg> cannot reuse the <picture> alt text, so wrap it with role/aria-label.
         header = f'<div role="img" aria-label="{alt}" style="width:100%">{svg}</div>'
         body = PICTURE.sub(lambda _m: header, html, count=1)
-        body = body.replace('src="assets/', 'src="../assets/').replace("<details>", "<details open>")  # preview only, never README
+        body = preview_only(body)
         page = (f'<!doctype html><html lang="en" data-theme="{name}"><head><meta charset="utf-8">'
                 f'<meta name="viewport" content="width=device-width,initial-scale=1">'
                 f'<meta name="color-scheme" content="{t["scheme"]}"><title>Preview {name}</title>'

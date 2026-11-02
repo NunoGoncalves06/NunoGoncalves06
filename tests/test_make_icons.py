@@ -25,3 +25,8 @@ def test_icons_are_line_icons():
 def test_main_writes_files(tmp_path):
     assert main(["--out", str(tmp_path)]) == 0
     assert all((tmp_path / f"icon-{n}.svg").exists() for n in NAMES)
+
+
+def test_icon_colour_comes_from_header_theme():
+    from make_header import THEMES
+    assert ICON_COLOR == THEMES["light"]["red"] == "#d4153b"

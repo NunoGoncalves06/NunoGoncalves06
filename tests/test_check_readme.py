@@ -163,3 +163,38 @@ def test_usage_exit_2():
     import subprocess, sys
     r = subprocess.run([sys.executable, str(Path(__file__).resolve().parent.parent / "check_readme.py")], capture_output=True, text=True)
     assert r.returncode == 2 and "usage" in r.stderr
+
+
+def test_flags_summary_hidden_in_comment_or_title():
+    gone = GOOD.replace("Summary of P7.", "", 1)
+    assert any("P7" in p and "verbatim" in p for p in check(gone + "<!-- Summary of P7. -->", SITE))
+    assert any("P7" in p and "verbatim" in p for p in check(gone + '<a title="Summary of P7.">x</a>', SITE))
+    assert any("P7" in p and "verbatim" in p for p in check(gone + "<a title='Summary of P7.'>x</a>", SITE))
+    assert any("P7" in p and "verbatim" in p for p in check(gone + "<!--" + chr(10) + "Summary of P7." + chr(10) + "-->", SITE))
+
+
+def test_img_rule_accepts_single_quoted_and_unquoted_attributes():
+    assert not has("<img src='x.svg' width='20' height='20' alt=''>", "alt")
+    assert not has("<img src=x.svg width=20 alt='' >", "alt")
+    assert not has("<img src='x.svg' width=100 alt='A thing'>", "alt")
+    assert not has("<img src=x.svg width=100 alt=Thing>", "alt")
+
+
+def test_img_rule_still_fails_empty_or_missing_alt_in_other_quotes():
+    assert has("<img src='x.svg' width='100' alt=''>", "alt")
+    assert has("<img src=x.svg width=100 alt=''>", "alt")
+    assert has("<img src='x.svg' width='25' alt=''>", "alt")
+    assert has("<img src='x.svg' width='100'>", "alt")
+
+
+def test_summary_only_in_single_quoted_alt_is_flagged():
+    bad = GOOD.replace("Summary of P7.", "", 1) + "<img src='x.svg' alt='Summary of P7.'>"
+    assert any("P7" in p and "verbatim" in p for p in check(bad, SITE))
+
+
+def test_flags_colspan_over_two_and_nested_table():
+    assert has('<table><tr><td colspan="3">a</td></tr></table>', "colspan")
+    assert has("<table><tr><td colspan=3>a</td></tr></table>", "colspan")
+    assert has("<table><tr><td colspan='5'>a</td></tr></table>", "colspan")
+    assert not has('<table><tr><td colspan="2">a</td></tr></table>', "colspan")
+    assert has("<table><tr><td><table><tr><td>a</td></tr></table></td></tr></table>", "nested")

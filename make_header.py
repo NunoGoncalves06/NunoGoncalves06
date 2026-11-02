@@ -109,7 +109,7 @@ def main(argv: list[str] | None = None) -> int:
         svg.write_text(build_svg(theme), encoding="utf-8")
         if args.png:
             cmd = [edge, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
-                   f"--default-background-color=ff{THEMES[theme]['bg'][1:]}", "--window-size=800,150", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
+                   "--default-background-color=00000000", "--window-size=800,150", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
                    f"--user-data-dir={tempfile.mkdtemp()}"]
             try:
                 ok = subprocess.run(cmd, timeout=60, capture_output=True).returncode == 0

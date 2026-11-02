@@ -49,6 +49,13 @@ def test_text_colours_pass_aa_on_page_background():
     assert 'fill="#d4153b"' in build_svg("light") and "#ff2a4f" in build_svg("dark")
 
 
+def test_text_colours_pass_aa_on_dark_dimmed_page():
+    # name and title text; the red and cyan glitch layers sit under the ink title and are decoration
+    from make_header import THEMES
+    for key in ("ink", "body"):
+        assert contrast(THEMES["dark"][key], "#22272e") >= 4.5, key
+
+
 def test_animation_only_when_motion_allowed():
     svg = build_svg("dark")
     assert "@keyframes" in svg
@@ -60,6 +67,8 @@ def test_main_png_fallback_renders_2x(tmp_path):
     assert main(["--png", "--out", str(tmp_path)]) == 0
     assert (tmp_path / "header-light.svg").exists()
     assert Image.open(tmp_path / "header-dark.png").size == (1600, 300)
+    for theme in ("dark", "light"):  # transparent corner, so no box on GitHub dark-dimmed
+        assert Image.open(tmp_path / f"header-{theme}.png").convert("RGBA").getpixel((1500, 280))[3] == 0
 
 
 def test_png_without_edge_fails_cleanly(tmp_path, monkeypatch, capsys):

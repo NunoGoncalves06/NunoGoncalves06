@@ -2,8 +2,10 @@
 import argparse
 from pathlib import Path
 
+from make_header import THEMES
+
 HERE = Path(__file__).resolve().parent
-ICON_COLOR = "#d4153b"
+ICON_COLOR = THEMES["light"]["red"]
 PATHS = {
     "flag": '<path d="M5 21V4M5 4h11l-2 4 2 4H5"/>',
     "folder": '<path d="M3 7h6l2 2h10v10H3z"/>',

@@ -9,6 +9,7 @@ OMITTED_PROJECTS: set[str] = set()  # data.ts projects deliberately left out of 
 EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿←-⇿⤴⤵⬀-⯿〰⭕️‍]|[©®]\ufe0f")
 CTF_WORDS = re.compile(r"\b(forensics|reverse engineering|pwn|misc)\b", re.I)
 # shortcut: regex over data.ts, not a TS parser; fine while summaries stay plain double-quoted strings.
+ATTR = r"""(?:"([^"]*)"|'([^']*)'|([^\s>"']+))"""  # double-quoted, single-quoted or unquoted attribute value
 PROJECT = re.compile(r'name:\s*"([^"]+)"[^{}]*?summary:\s*"((?:[^"\\]|\\.)*)"')
 
 
@@ -46,20 +47,28 @@ def check(readme: str, site_data: str) -> list[str]:
             out.append("header <img> needs alt text and width=\"100%\"")
     for m in re.finditer(r"<img\b[^>]*>", readme):
         tag = m.group(0)
-        alt = re.search(r'\balt="([^"]*)"', tag)
-        width = re.search(r'\bwidth="(\d+)"', tag)
-        if not alt or (not alt.group(1).strip() and not (width and int(width.group(1)) <= 24)):
+        alt = re.search(rf"\balt={ATTR}", tag)
+        width = re.search(rf"\bwidth={ATTR}", tag)
+        a = next((g for g in alt.groups() if g is not None), "") if alt else ""
+        w = next((g for g in width.groups() if g is not None), "") if width else ""
+        if not alt or (not a.strip() and not (w.isdigit() and int(w) <= 24)):
             out.append(f"img needs alt text (empty alt only on icons 24 px wide or smaller): {tag[:60]}")
     if re.search(r"!\[\s*\]\(", readme):
         out.append("markdown image has empty alt text")
     for row in re.findall(r"<tr\b.*?</tr>", readme, re.S | re.I):
         if len(re.findall(r"<t[dh]\b", row, re.I)) > 2:
             out.append(f"html table row wider than 2 columns: {row[:60]}")
+    for m in re.finditer(r"\bcolspan\s*=\s*[\"']?(\d+)", readme, re.I):
+        if int(m.group(1)) > 2:
+            out.append(f"html table cell with colspan {m.group(1)}, wider than 2 columns")
+    if re.search(r"<td\b(?:(?!</td>).)*<table\b", readme, re.S | re.I):
+        out.append("html table nested inside a cell")
     for h in ("Highlights", "Projects", "Skills", "Contact"):
         if not re.search(rf"^##[ \t]+(?:<img\b[^>]*>[ \t]*)?{h}[ \t]*$", readme, re.M):
             out.append(f"missing ## heading: {h}")
     # a summary counts only as visible text, not inside alt attributes or markdown alt
-    visible = re.sub(r'\balt="[^"]*"', "", readme)
+    visible = re.sub(r"<!--.*?-->", "", readme, flags=re.S)
+    visible = re.sub(rf"\b(?:alt|title)={ATTR}", "", visible)
     visible = re.sub(r"!\[[^\]]*\]", "", visible)
     found = PROJECT.findall(site_data)
     if len(found) < MIN_PROJECTS:
