@@ -1,18 +1,24 @@
 """Generate the profile header SVGs (dark and light) in the style of the portfolio site."""
 import argparse
 import base64
+import shutil
 import subprocess
+import sys
 import tempfile
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 FONT = HERE / "../portfolio/node_modules/@fontsource/barlow-condensed/files/barlow-condensed-latin-800-normal.woff2"
-EDGE = r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe"
+EDGE_PATHS = (r"C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe",
+              r"C:\Program Files\Microsoft\Edge\Application\msedge.exe")
+
+
+def find_edge() -> str | None:
+    return shutil.which("msedge") or next((p for p in EDGE_PATHS if Path(p).exists()), None)
 
 NAME = "Nuno Gonçalves"
 TITLE = "Offensive security"
-LINES = ("Informatics Engineering student at ISEP, Porto.",
-         "Looking for a curricular internship from February to June 2027.")
+LINES = ("Informatics Engineering student at ISEP, Porto.",)
 
 # bg, title ink, name/body ink, red, cyan (light variants darkened for AA on the light background)
 THEMES = {
@@ -43,7 +49,7 @@ def contrast(a: str, b: str) -> float:
 def build_svg(theme: str) -> str:
     t = THEMES[theme]
     font = base64.b64encode(FONT.read_bytes()).decode()
-    body = "".join(f'<text x="60" y="{y}" class="line">{s}</text>' for y, s in zip((232, 264), LINES))
+    body = "".join(f'<text x="60" y="{y}" class="line">{s}</text>' for y, s in zip((232,), LINES))
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
 <title id="t">{NAME}: {TITLE}</title>
 <desc id="d">Profile header for {NAME}, {TITLE}. {" ".join(LINES)}</desc>
@@ -60,15 +66,15 @@ def build_svg(theme: str) -> str:
   #c {{ animation: tear-b 1.1s steps(1) 1 both; }}
 }}
 @keyframes tear-a {{
-  0% {{ clip-path: inset(10% 0 70% 0); transform: translateX(-12px); }}
-  30% {{ clip-path: inset(30% 0 45% 0); transform: translateX(-14px); }}
-  60% {{ clip-path: inset(5% 0 85% 0); transform: translateX(-8px); }}
+  0% {{ clip-path: inset(10% 0 70% 0); transform: translateX(-4px); }}
+  30% {{ clip-path: inset(30% 0 45% 0); transform: translateX(-4px); }}
+  60% {{ clip-path: inset(5% 0 85% 0); transform: translateX(-3px); }}
   100% {{ clip-path: inset(0 0 0 0); transform: translateX(-2px); }}
 }}
 @keyframes tear-b {{
-  0% {{ clip-path: inset(60% 0 15% 0); transform: translateX(12px); }}
-  30% {{ clip-path: inset(15% 0 60% 0); transform: translateX(14px); }}
-  60% {{ clip-path: inset(70% 0 10% 0); transform: translateX(8px); }}
+  0% {{ clip-path: inset(60% 0 15% 0); transform: translateX(4px); }}
+  30% {{ clip-path: inset(15% 0 60% 0); transform: translateX(4px); }}
+  60% {{ clip-path: inset(70% 0 10% 0); transform: translateX(3px); }}
   100% {{ clip-path: inset(0 0 0 0); transform: translateX(2px); }}
 }}
 </style>
@@ -90,14 +96,19 @@ def main(argv: list[str] | None = None) -> int:
     args = ap.parse_args(argv)
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
+    edge = find_edge() if args.png else None
+    if args.png and not edge:
+        print("error: Microsoft Edge not found (needed for --png)", file=sys.stderr)
+        return 1
     for theme in THEMES:
         svg = out / f"header-{theme}.svg"
         svg.write_text(build_svg(theme), encoding="utf-8")
         if args.png:
-            cmd = [EDGE, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
+            cmd = [edge, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
                    "--window-size=1200,300", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
                    f"--user-data-dir={tempfile.mkdtemp()}"]
             if subprocess.run(cmd, timeout=60, capture_output=True).returncode != 0:
+                print(f"error: Edge failed rendering header-{theme}.png", file=sys.stderr)
                 return 1
     return 0
 

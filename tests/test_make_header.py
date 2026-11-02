@@ -28,6 +28,11 @@ def test_light_has_light_background_with_aa_title():
     bg = re.search(r'<rect id="bg"[^>]*fill="(#[0-9a-f]{6})"', svg).group(1)
     assert bg == light_bg() and bg != "#0a0a0c"
     assert contrast(light_bg(), light_title()) >= 4.5
+    for c in re.findall(r"#[0-9a-f]{6}", svg):
+        if c in ("#d4153b", "#0a8a96"):
+            assert contrast(light_bg(), c) >= 3
+    assert "Looking for" not in svg
+    assert max(int(n) for n in re.findall(r"translateX\(-?(\d+)px\)", svg)) <= 4
 
 
 def test_animation_only_when_motion_allowed():
@@ -41,3 +46,10 @@ def test_main_png_fallback_renders_2x(tmp_path):
     assert main(["--png", "--out", str(tmp_path)]) == 0
     assert (tmp_path / "header-light.svg").exists()
     assert Image.open(tmp_path / "header-dark.png").size == (2400, 600)
+
+
+def test_png_without_edge_fails_cleanly(tmp_path, monkeypatch, capsys):
+    import make_header
+    monkeypatch.setattr(make_header, "find_edge", lambda: None)
+    assert main(["--png", "--out", str(tmp_path)]) == 1
+    assert "Edge not found" in capsys.readouterr().err
