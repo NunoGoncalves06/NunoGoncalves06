@@ -1,0 +1,27 @@
+{
+  "SpotCast": {
+    "description": "Android app in Kotlin: save outdoor spots and get a Go, Maybe or Skip for each activity from the forecast.",
+    "homepage": "https://nunogoncalves06.github.io",
+    "topics": ["android", "kotlin", "jetpack-compose", "firebase", "ktor", "openstreetmap"]
+  },
+  "Wakecast": {
+    "description": "Android alarm that reads a morning briefing when you dismiss it: weather, calendar, to-dos, news. No account.",
+    "homepage": "https://nunogoncalves06.github.io",
+    "topics": null
+  },
+  "NunoGoncalves06.github.io": {
+    "description": "Personal website of Nuno Gonçalves, offensive security student at ISEP",
+    "homepage": "https://nunogoncalves06.github.io",
+    "topics": ["portfolio", "react", "tailwindcss", "offensive-security"]
+  },
+  "alchemists-arsenal": {
+    "description": "Unity game in C#, built on my own.",
+    "homepage": null,
+    "topics": ["unity", "csharp", "game"]
+  },
+  "NunoGoncalves06": {
+    "description": null,
+    "homepage": "https://nunogoncalves06.github.io",
+    "topics": null
+  }
+}
