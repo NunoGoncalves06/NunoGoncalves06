@@ -1,8 +1,8 @@
-<picture>
+<p><picture>
   <source media="(prefers-color-scheme: dark)" srcset="assets/header-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="assets/header-light.svg">
   <img src="assets/header-dark.svg" width="100%" alt="Nuno Gonçalves, offensive security. Informatics engineering student at ISEP, Porto.">
-</picture>
+</picture></p>
 
 Informatics Engineering student at ISEP, Porto. Looking for a curricular internship from February to June 2027.
 
