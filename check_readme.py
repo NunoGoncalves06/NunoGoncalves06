@@ -6,7 +6,7 @@ from pathlib import Path
 PUBLIC_REPOS = {"NunoGoncalves06", "NunoGoncalves06.github.io", "SpotCast", "Wakecast", "alchemists-arsenal"}
 MIN_PROJECTS = 7  # featured plus the six in projects
 OMITTED_PROJECTS: set[str] = set()  # data.ts projects deliberately left out of the README
-EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿⭐⭕️‍]")
+EMOJI = re.compile("[\U0001F000-\U0001FAFF☀-➿←-⇿⤴⤵⬀-⯿〰⭕️‍]|[©®]\ufe0f")
 CTF_WORDS = re.compile(r"\b(forensics|reverse engineering|pwn|misc)\b", re.I)
 # shortcut: regex over data.ts, not a TS parser; fine while summaries stay plain double-quoted strings.
 PROJECT = re.compile(r'name:\s*"([^"]+)"[^{}]*?summary:\s*"((?:[^"\\]|\\.)*)"')
@@ -48,7 +48,8 @@ def check(readme: str, site_data: str) -> list[str]:
     if len(found) < MIN_PROJECTS:
         out.append(f"parsed only {len(found)} projects from data.ts, expected at least {MIN_PROJECTS}")
     for name, summary in found:
-        if name not in readme:
+        lead = rf"^(?:#{{1,6}}\s+|[-*]\s+)\[?{re.escape(name)}(?!\w)"
+        if not re.search(lead, readme, re.M):
             if name not in OMITTED_PROJECTS:
                 out.append(f"project {name} from data.ts is missing from the README")
         elif summary not in readme:
@@ -57,6 +58,9 @@ def check(readme: str, site_data: str) -> list[str]:
 
 
 if __name__ == "__main__":
+    if len(sys.argv) != 3:
+        print("usage: python check_readme.py README.md data.ts", file=sys.stderr)
+        sys.exit(2)
     probs = check(Path(sys.argv[1]).read_text(encoding="utf-8"), Path(sys.argv[2]).read_text(encoding="utf-8"))
     for p in probs:
         print(p)

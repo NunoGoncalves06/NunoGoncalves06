@@ -1,6 +1,7 @@
 """Generate the profile header SVGs (dark and light) in the style of the portfolio site."""
 import argparse
 import base64
+import functools
 import shutil
 import subprocess
 import sys
@@ -45,9 +46,14 @@ def contrast(a: str, b: str) -> float:
     return (hi + 0.05) / (lo + 0.05)
 
 
+@functools.cache
+def font_b64() -> str:
+    return base64.b64encode(FONT.read_bytes()).decode()
+
+
 def build_svg(theme: str) -> str:
     t = THEMES[theme]
-    font = base64.b64encode(FONT.read_bytes()).decode()
+    font = font_b64()
     return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
 <title id="t">{NAME}: {TITLE}</title>
 <desc id="d">Profile header for {NAME}, {TITLE}.</desc>
@@ -90,6 +96,9 @@ def main(argv: list[str] | None = None) -> int:
     ap.add_argument("--png", action="store_true", help="also render 2400x600 PNG fallbacks with Edge")
     ap.add_argument("--out", default=str(HERE / "assets"))
     args = ap.parse_args(argv)
+    if not FONT.exists():
+        print(f"error: font not found at {FONT.resolve()}; run `npm i @fontsource/barlow-condensed` in ../portfolio", file=sys.stderr)
+        return 1
     out = Path(args.out)
     out.mkdir(parents=True, exist_ok=True)
     edge = find_edge() if args.png else None
@@ -103,8 +112,12 @@ def main(argv: list[str] | None = None) -> int:
             cmd = [edge, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
                    "--window-size=1200,300", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
                    f"--user-data-dir={tempfile.mkdtemp()}"]
-            if subprocess.run(cmd, timeout=60, capture_output=True).returncode != 0:
-                print(f"error: Edge failed rendering header-{theme}.png", file=sys.stderr)
+            try:
+                ok = subprocess.run(cmd, timeout=60, capture_output=True).returncode == 0
+            except subprocess.TimeoutExpired:
+                ok = False
+            if not ok:
+                print(f"error: Edge failed or timed out rendering header-{theme}.png", file=sys.stderr)
                 return 1
     return 0
 

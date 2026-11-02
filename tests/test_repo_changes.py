@@ -51,3 +51,28 @@ def test_apply_uses_check_and_timeout():
     with mock.patch.object(subprocess, "run") as run:
         arc.main(["--apply"])
     assert run.call_args.kwargs == {"check": True, "timeout": 60}
+
+
+def test_dry_run_matches_list2cmdline(capsys):
+    arc.main(["--dry-run"])
+    out = capsys.readouterr().out.splitlines()
+    assert out == [subprocess.list2cmdline(c) for c in arc.commands(CHANGES)]
+
+
+def test_apply_continues_after_failure_and_exits_1(capsys):
+    def fake(cmd, **kw):
+        if "NunoGoncalves06/SpotCast" in cmd:
+            raise subprocess.CalledProcessError(1, cmd)
+        if "NunoGoncalves06/Wakecast" in cmd:
+            raise subprocess.TimeoutExpired(cmd, 60)
+    with mock.patch.object(subprocess, "run", side_effect=fake) as run:
+        assert arc.main(["--apply"]) == 1
+    assert run.call_count == len(arc.commands(CHANGES))
+    out = capsys.readouterr().out
+    assert "failed: NunoGoncalves06/SpotCast, NunoGoncalves06/Wakecast" in out
+    assert "alchemists-arsenal" in out.split("failed:")[0]
+
+
+def test_apply_all_ok_exits_0():
+    with mock.patch.object(subprocess, "run"):
+        assert arc.main(["--apply"]) == 0

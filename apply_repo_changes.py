@@ -40,12 +40,21 @@ def main(argv=None):
     ap = p.parse_args(argv)
     sys.stdout.reconfigure(encoding="utf-8")  # Windows console default would garble the ç
     cmds = commands(load(DEFAULT))
+    if not ap.apply:
+        for cmd in cmds:
+            print(subprocess.list2cmdline(cmd))
+        return 0
+    done, failed = [], []
     for cmd in cmds:
-        if ap.apply:
+        try:
             subprocess.run(cmd, check=True, timeout=60)
-        else:
-            print(" ".join(f'"{a}"' if " " in a else a for a in cmd))
+            done.append(cmd[3])
+        except (subprocess.CalledProcessError, subprocess.TimeoutExpired):
+            failed.append(cmd[3])
+    print(f"applied: {', '.join(done) or 'none'}")
+    print(f"failed: {', '.join(failed) or 'none'}")
+    return 1 if failed else 0
 
 
 if __name__ == "__main__":
-    main()
+    sys.exit(main())

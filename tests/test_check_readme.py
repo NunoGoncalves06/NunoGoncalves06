@@ -22,7 +22,7 @@ GOOD = """<picture>
 
 Hello. See [Other](https://github.com/NunoGoncalves06/SpotCast).
 
-""" + (chr(10) * 2).join(f"{n}: Summary of {n}." for n in NAMES) + """
+""" + (chr(10) * 2).join(f"### {n}" + chr(10) * 2 + f"Summary of {n}." for n in NAMES) + """
 
 | a | b |
 |---|---|
@@ -103,12 +103,32 @@ def test_flags_unparseable_site_data():
 
 
 def test_flags_project_missing_from_readme():
-    bad = GOOD.replace("P7: Summary of P7.", "")
+    bad = GOOD.replace("### P7" + chr(10) * 2 + "Summary of P7.", "")
     assert any("P7" in p and "missing" in p for p in check(bad, SITE))
 
 
 def test_omitted_allowlist_excuses_missing_project(monkeypatch):
     import check_readme
     monkeypatch.setattr(check_readme, "OMITTED_PROJECTS", {"P7"})
-    bad = GOOD.replace("P7: Summary of P7.", "")
+    bad = GOOD.replace("### P7" + chr(10) * 2 + "Summary of P7.", "")
     assert check(bad, SITE) == []
+
+
+def test_project_name_must_be_a_heading_or_list_lead():
+    bad = GOOD.replace("### P7", "P7 is mentioned here")
+    assert any("P7" in p and "missing" in p for p in check(bad, SITE))
+    assert check(GOOD.replace("### P7", "- P7."), SITE) == []
+    assert check(GOOD.replace("### P7", "### [P7](https://x)"), SITE) == []
+    assert any("P3" in p for p in check(GOOD.replace("### P3", "### P3x"), SITE))
+
+
+def test_flags_wider_emoji_ranges():
+    for ch in ("→", "⤴", "⭐", "〰", "©️", "®️"):
+        assert has(f"x {ch}", "emoji"), hex(ord(ch[0]))
+    assert not has("plain © and ç", "emoji")
+
+
+def test_usage_exit_2():
+    import subprocess, sys
+    r = subprocess.run([sys.executable, str(Path(__file__).resolve().parent.parent / "check_readme.py")], capture_output=True, text=True)
+    assert r.returncode == 2 and "usage" in r.stderr

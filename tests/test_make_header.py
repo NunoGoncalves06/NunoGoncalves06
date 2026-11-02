@@ -54,3 +54,29 @@ def test_png_without_edge_fails_cleanly(tmp_path, monkeypatch, capsys):
     monkeypatch.setattr(make_header, "find_edge", lambda: None)
     assert main(["--png", "--out", str(tmp_path)]) == 1
     assert "Edge not found" in capsys.readouterr().err
+
+
+def test_missing_font_is_a_clean_error(tmp_path, monkeypatch, capsys):
+    import make_header
+    monkeypatch.setattr(make_header, "FONT", tmp_path / "nope.woff2")
+    assert main(["--out", str(tmp_path)]) == 1
+    err = capsys.readouterr().err
+    assert str(tmp_path / "nope.woff2") in err and "npm i @fontsource/barlow-condensed" in err
+
+
+def test_edge_timeout_is_a_clean_error(tmp_path, monkeypatch, capsys):
+    import make_header
+    import subprocess
+    def boom(*a, **k):
+        raise subprocess.TimeoutExpired("edge", 60)
+    monkeypatch.setattr(make_header, "find_edge", lambda: "edge")
+    monkeypatch.setattr(subprocess, "run", boom)
+    assert main(["--png", "--out", str(tmp_path)]) == 1
+    assert "timed out" in capsys.readouterr().err
+
+
+def test_font_encoded_once():
+    import make_header
+    make_header.font_b64.cache_clear()
+    build_svg("dark"); build_svg("light")
+    assert make_header.font_b64.cache_info().hits >= 1 and make_header.font_b64.cache_info().misses == 1
