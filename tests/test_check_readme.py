@@ -22,11 +22,17 @@ GOOD = """<picture>
 
 Hello. See [Other](https://github.com/NunoGoncalves06/SpotCast).
 
+""" + (chr(10)*2).join(f'## <img src="assets/icon-{i}.svg" width="20" height="20" alt=""> {h}' for i, h in (("flag", "Highlights"), ("folder", "Projects"), ("terminal", "Skills"), ("mail", "Contact"))) + """
+
 """ + (chr(10) * 2).join(f"### {n}" + chr(10) * 2 + f"Summary of {n}." for n in NAMES) + """
 
 | a | b |
 |---|---|
 | 1 | 2 |
+
+<table>
+<tr><td><b>Security</b></td><td><img src="https://img.shields.io/badge/Nmap-x" alt="Nmap"></td></tr>
+</table>
 """
 
 
@@ -126,6 +132,31 @@ def test_flags_wider_emoji_ranges():
     for ch in ("→", "⤴", "⭐", "〰", "©️", "®️"):
         assert has(f"x {ch}", "emoji"), hex(ord(ch[0]))
     assert not has("plain © and ç", "emoji")
+
+
+def test_flags_img_without_alt():
+    assert has('<img src="x.svg" width="100" alt="">', "alt")
+    assert has('<img src="x.svg">', "alt")
+    assert has("![](x.svg)", "alt")
+    assert not has('<img src="x.svg" width="24" height="24" alt="">', "alt")
+    assert has('<img src="x.svg" width="25" alt="">', "alt")
+
+
+def test_flags_summary_only_in_alt():
+    bad = GOOD.replace("Summary of P7.", "", 1) + '<img src="x.svg" alt="Summary of P7.">'
+    assert any("P7" in p and "verbatim" in p for p in check(bad, SITE))
+
+
+def test_flags_wide_html_table():
+    assert has("<table><tr><td>a</td><td>b</td><td>c</td></tr></table>", "table")
+    assert has("<table><tr><th>a</th><td>b</td><td>c</td></tr></table>", "table")
+
+
+def test_requires_section_headings():
+    for h in ("Highlights", "Projects", "Skills", "Contact"):
+        bad = GOOD.replace(f"> {h}", f"> {h}x")
+        assert any(h in p and "heading" in p for p in check(bad, SITE)), h
+    assert any("Skills" in p for p in check(GOOD.replace("## <img", "### <img"), SITE))
 
 
 def test_usage_exit_2():

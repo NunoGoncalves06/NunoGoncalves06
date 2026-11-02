@@ -8,18 +8,20 @@ Informatics Engineering student at ISEP, Porto. Looking for a curricular interns
 
 My site: [nunogoncalves06.github.io](https://nunogoncalves06.github.io)
 
-## Highlights
+## <img src="assets/icon-flag.svg" width="20" height="20" alt=""> Highlights
 
 - CCNA certified, Cisco, August 2026
 - 8th of 300+ teams, upCTF 2026, my first CTF
 - Junior top 10, National bootcamp, National Cybersecurity Centre, 2026
 
-[![CCNA: certified](https://img.shields.io/badge/CCNA-certified-ff2a4f?style=for-the-badge&labelColor=000000)](https://www.credly.com/badges/8c053a69-a852-435b-9cd2-595bfd291f4f)<br>
-![IELTS Academic: English C1](https://img.shields.io/badge/IELTS%20Academic-English%20C1-ff2a4f?style=for-the-badge&labelColor=000000)<br>
-![CEH v13: training completed](https://img.shields.io/badge/CEH%20v13-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000)<br>
-![AWS Cloud Practitioner: training completed](https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-8a1a2e?style=for-the-badge&labelColor=000000)
+<p>
+<a href="https://www.credly.com/badges/8c053a69-a852-435b-9cd2-595bfd291f4f"><img src="https://img.shields.io/badge/CCNA-certified-ff2a4f?style=flat&labelColor=000000" alt="CCNA: certified"></a>
+<img src="https://img.shields.io/badge/IELTS%20Academic-English%20C1-ff2a4f?style=flat&labelColor=000000" alt="IELTS Academic: English C1">
+<img src="https://img.shields.io/badge/CEH%20v13-training%20completed-8a1a2e?style=flat&labelColor=000000" alt="CEH v13: training completed">
+<img src="https://img.shields.io/badge/AWS%20Cloud%20Practitioner-training%20completed-8a1a2e?style=flat&labelColor=000000" alt="AWS Cloud Practitioner: training completed">
+</p>
 
-## Projects
+## <img src="assets/icon-folder.svg" width="20" height="20" alt=""> Projects
 
 ### Three-site enterprise network
 
@@ -45,20 +47,25 @@ An Android app for Mobile Application Development at Aarhus University. Save out
 
 An alarm that reads you a morning briefing when you dismiss it: the weather, your calendar, your to-dos and the news. It runs entirely on the phone, with no account and no tracking.
 
-### More
+<details><summary><b>More projects</b></summary>
 
 - All Aboard. The first-year integrative project that won ISEP's Best Project Award: a Java application built from requirements to tested code, plus data analysis in Jupyter.
 - Sueca bot tournament. Bots for Sueca, the Portuguese card game, running in Docker containers against other teams at ENEI.
 - [Alchemist's Arsenal](https://github.com/NunoGoncalves06/alchemists-arsenal). Unity game in C#, built on my own.
 
-## Skills
+</details>
 
-- Security: Kali Linux, Nmap, Wireshark, Burp Suite, Hydra, Ghidra
-- Networks: Cisco IOS, VLANs and STP, OSPF, NAT and ACLs, IPsec VPN, Ansible
-- Code: Java, C, Python, Kotlin, C++, C#
-- Platforms: Linux, Docker, Git and GitLab, Android, AWS fundamentals
+## <img src="assets/icon-terminal.svg" width="20" height="20" alt=""> Skills
 
-## Contact
+<table>
+<tr><td><b>Security</b></td><td><img src="https://img.shields.io/badge/-Kali%20Linux-557C94?style=flat&logo=kalilinux&logoColor=white&labelColor=2b2b31" alt="Kali Linux"> <img src="https://img.shields.io/badge/Nmap-555?style=flat&labelColor=2b2b31" alt="Nmap"> <img src="https://img.shields.io/badge/-Wireshark-1679A7?style=flat&logo=wireshark&logoColor=white&labelColor=2b2b31" alt="Wireshark"> <img src="https://img.shields.io/badge/-Burp%20Suite-FF6633?style=flat&logo=burpsuite&logoColor=white&labelColor=2b2b31" alt="Burp Suite"> <img src="https://img.shields.io/badge/Hydra-555?style=flat&labelColor=2b2b31" alt="Hydra"> <img src="https://img.shields.io/badge/Ghidra-555?style=flat&labelColor=2b2b31" alt="Ghidra"></td></tr>
+<tr><td><b>Networks</b></td><td><img src="https://img.shields.io/badge/-Cisco%20IOS-1BA0D7?style=flat&logo=cisco&logoColor=white&labelColor=2b2b31" alt="Cisco IOS"> <img src="https://img.shields.io/badge/VLANs%20and%20STP-555?style=flat&labelColor=2b2b31" alt="VLANs and STP"> <img src="https://img.shields.io/badge/OSPF-555?style=flat&labelColor=2b2b31" alt="OSPF"> <img src="https://img.shields.io/badge/NAT%20and%20ACLs-555?style=flat&labelColor=2b2b31" alt="NAT and ACLs"> <img src="https://img.shields.io/badge/IPsec%20VPN-555?style=flat&labelColor=2b2b31" alt="IPsec VPN"> <img src="https://img.shields.io/badge/-Ansible-EE0000?style=flat&logo=ansible&logoColor=white&labelColor=2b2b31" alt="Ansible"></td></tr>
+<tr><td><b>Code</b></td><td><img src="https://img.shields.io/badge/Java-555?style=flat&labelColor=2b2b31" alt="Java"> <img src="https://img.shields.io/badge/-C-A8B9CC?style=flat&logo=c&logoColor=white&labelColor=2b2b31" alt="C"> <img src="https://img.shields.io/badge/-Python-3776AB?style=flat&logo=python&logoColor=white&labelColor=2b2b31" alt="Python"> <img src="https://img.shields.io/badge/-Kotlin-7F52FF?style=flat&logo=kotlin&logoColor=white&labelColor=2b2b31" alt="Kotlin"> <img src="https://img.shields.io/badge/-C%2B%2B-00599C?style=flat&logo=cplusplus&logoColor=white&labelColor=2b2b31" alt="C++"> <img src="https://img.shields.io/badge/C%23-555?style=flat&labelColor=2b2b31" alt="C#"></td></tr>
+<tr><td><b>Platforms</b></td><td><img src="https://img.shields.io/badge/-Linux-FCC624?style=flat&logo=linux&logoColor=white&labelColor=2b2b31" alt="Linux"> <img src="https://img.shields.io/badge/-Docker-2496ED?style=flat&logo=docker&logoColor=white&labelColor=2b2b31" alt="Docker"> <img src="https://img.shields.io/badge/-Git%20and%20GitLab-FC6D26?style=flat&logo=gitlab&logoColor=white&labelColor=2b2b31" alt="Git and GitLab"> <img src="https://img.shields.io/badge/-Android-3DDC84?style=flat&logo=android&logoColor=white&labelColor=2b2b31" alt="Android"> <img src="https://img.shields.io/badge/AWS%20fundamentals-555?style=flat&labelColor=2b2b31" alt="AWS fundamentals"></td></tr>
+</table>
+
+## <img src="assets/icon-mail.svg" width="20" height="20" alt=""> Contact
+
 
 - Email: [nunogoncalves070906@gmail.com](mailto:nunogoncalves070906@gmail.com)
 - LinkedIn: [www.linkedin.com/in/nunogonçalves070906](https://www.linkedin.com/in/nunogon%C3%A7alves070906)

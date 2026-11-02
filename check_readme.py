@@ -44,6 +44,23 @@ def check(readme: str, site_data: str) -> list[str]:
                 out.append(f"header <picture> lacks the {theme} source")
         if not re.search(r"<img\b(?=[^>]*\balt=\"[^\"]+\")(?=[^>]*width=\"100%\")", p):
             out.append("header <img> needs alt text and width=\"100%\"")
+    for m in re.finditer(r"<img\b[^>]*>", readme):
+        tag = m.group(0)
+        alt = re.search(r'\balt="([^"]*)"', tag)
+        width = re.search(r'\bwidth="(\d+)"', tag)
+        if not alt or (not alt.group(1).strip() and not (width and int(width.group(1)) <= 24)):
+            out.append(f"img needs alt text (empty alt only on icons 24 px wide or smaller): {tag[:60]}")
+    if re.search(r"!\[\s*\]\(", readme):
+        out.append("markdown image has empty alt text")
+    for row in re.findall(r"<tr\b.*?</tr>", readme, re.S | re.I):
+        if len(re.findall(r"<t[dh]\b", row, re.I)) > 2:
+            out.append(f"html table row wider than 2 columns: {row[:60]}")
+    for h in ("Highlights", "Projects", "Skills", "Contact"):
+        if not re.search(rf"^##[ \t]+(?:<img\b[^>]*>[ \t]*)?{h}[ \t]*$", readme, re.M):
+            out.append(f"missing ## heading: {h}")
+    # a summary counts only as visible text, not inside alt attributes or markdown alt
+    visible = re.sub(r'\balt="[^"]*"', "", readme)
+    visible = re.sub(r"!\[[^\]]*\]", "", visible)
     found = PROJECT.findall(site_data)
     if len(found) < MIN_PROJECTS:
         out.append(f"parsed only {len(found)} projects from data.ts, expected at least {MIN_PROJECTS}")
@@ -52,7 +69,7 @@ def check(readme: str, site_data: str) -> list[str]:
         if not re.search(lead, readme, re.M):
             if name not in OMITTED_PROJECTS:
                 out.append(f"project {name} from data.ts is missing from the README")
-        elif summary not in readme:
+        elif summary not in visible:
             out.append(f"summary for {name} is not verbatim from data.ts")
     return out
 
