@@ -20,10 +20,10 @@ def find_edge() -> str | None:
 NAME = "Nuno Gonçalves"
 TITLE = "Offensive security"
 
-# bg, title ink, name/body ink, red, cyan (light variants darkened for AA on the light background)
+# The header has no panel: it sits on GitHub's page colour. ink = title, body = name (both AA on that page).
 THEMES = {
-    "dark": dict(bg="#0a0a0c", ink="#f4f4f6", body="#a8a8b2", red="#ff2a4f", cyan="#28dceb"),
-    "light": dict(bg="#f4f4f6", ink="#0a0a0c", body="#3a3a44", red="#d4153b", cyan="#0a8a96"),
+    "dark": dict(bg="#0d1117", ink="#f4f4f6", body="#9198a1", red="#ff2a4f", cyan="#28dceb"),
+    "light": dict(bg="#ffffff", ink="#0a0a0c", body="#59636e", red="#d4153b", cyan="#0a8a96"),
 }
 
 
@@ -54,46 +54,45 @@ def font_b64() -> str:
 def build_svg(theme: str) -> str:
     t = THEMES[theme]
     font = font_b64()
-    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="300" viewBox="0 0 1200 300" role="img" aria-labelledby="t d">
+    return f'''<svg xmlns="http://www.w3.org/2000/svg" width="800" height="150" viewBox="0 0 800 150" role="img" aria-labelledby="t d">
 <title id="t">{NAME}: {TITLE}</title>
 <desc id="d">Profile header for {NAME}, {TITLE}.</desc>
 <style>
 @font-face {{ font-family: "Barlow Condensed"; font-weight: 800; src: url(data:font/woff2;base64,{font}) format("woff2"); }}
-.name {{ font: 500 32px "Segoe UI", Helvetica, Arial, sans-serif; fill: {t["body"]}; }}
-.title {{ font: 800 130px "Barlow Condensed", Impact, sans-serif; text-transform: uppercase; }}
-#r {{ fill: {t["red"]}; transform: translateX(-2px); }}
-#c {{ fill: {t["cyan"]}; transform: translateX(2px); }}
+.name {{ font: 400 28px "Segoe UI", Helvetica, Arial, sans-serif; fill: {t["body"]}; }}
+.title {{ font: 800 64px "Barlow Condensed", Impact, sans-serif; letter-spacing: 1px; text-transform: uppercase; }}
+#r {{ fill: {t["red"]}; opacity: .7; transform: translateX(-1px); }}
+#c {{ fill: {t["cyan"]}; opacity: .5; transform: translateX(1px); }}
 #m {{ fill: {t["ink"]}; }}
 @media (prefers-reduced-motion: no-preference) {{
   #r {{ animation: tear-a 1.1s steps(1) 1 both; }}
   #c {{ animation: tear-b 1.1s steps(1) 1 both; }}
 }}
 @keyframes tear-a {{
-  0% {{ clip-path: inset(10% 0 70% 0); transform: translateX(-4px); }}
-  30% {{ clip-path: inset(30% 0 45% 0); transform: translateX(-4px); }}
-  60% {{ clip-path: inset(5% 0 85% 0); transform: translateX(-3px); }}
-  100% {{ clip-path: inset(0 0 0 0); transform: translateX(-2px); }}
+  0% {{ clip-path: inset(10% 0 70% 0); transform: translateX(-3px); }}
+  30% {{ clip-path: inset(30% 0 45% 0); transform: translateX(-3px); }}
+  60% {{ clip-path: inset(5% 0 85% 0); transform: translateX(-2px); }}
+  100% {{ clip-path: inset(0 0 0 0); transform: translateX(-1px); }}
 }}
 @keyframes tear-b {{
-  0% {{ clip-path: inset(60% 0 15% 0); transform: translateX(4px); }}
-  30% {{ clip-path: inset(15% 0 60% 0); transform: translateX(4px); }}
-  60% {{ clip-path: inset(70% 0 10% 0); transform: translateX(3px); }}
-  100% {{ clip-path: inset(0 0 0 0); transform: translateX(2px); }}
+  0% {{ clip-path: inset(60% 0 15% 0); transform: translateX(3px); }}
+  30% {{ clip-path: inset(15% 0 60% 0); transform: translateX(3px); }}
+  60% {{ clip-path: inset(70% 0 10% 0); transform: translateX(2px); }}
+  100% {{ clip-path: inset(0 0 0 0); transform: translateX(1px); }}
 }}
 </style>
-<rect id="bg" width="1200" height="300" fill="{t["bg"]}"/>
-<rect x="0" y="0" width="8" height="300" fill="{t["red"]}"/>
-<text x="60" y="105" class="name">{NAME}</text>
-<text id="c" x="60" y="220" class="title">{TITLE}</text>
-<text id="r" x="60" y="220" class="title">{TITLE}</text>
-<text id="m" x="60" y="220" class="title">{TITLE}</text>
+<rect x="0" y="40" width="5" height="80" fill="{t["red"]}"/>
+<text x="28" y="66" class="name">{NAME}</text>
+<text id="c" x="28" y="124" class="title">{TITLE}</text>
+<text id="r" x="28" y="124" class="title">{TITLE}</text>
+<text id="m" x="28" y="124" class="title">{TITLE}</text>
 </svg>
 '''
 
 
 def main(argv: list[str] | None = None) -> int:
     ap = argparse.ArgumentParser()
-    ap.add_argument("--png", action="store_true", help="also render 2400x600 PNG fallbacks with Edge")
+    ap.add_argument("--png", action="store_true", help="also render 1600x300 PNG fallbacks with Edge")
     ap.add_argument("--out", default=str(HERE / "assets"))
     args = ap.parse_args(argv)
     if not FONT.exists():
@@ -110,7 +109,7 @@ def main(argv: list[str] | None = None) -> int:
         svg.write_text(build_svg(theme), encoding="utf-8")
         if args.png:
             cmd = [edge, "--headless=new", "--disable-gpu", "--hide-scrollbars", "--force-device-scale-factor=2",
-                   "--window-size=1200,300", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
+                   f"--default-background-color=ff{THEMES[theme]['bg'][1:]}", "--window-size=800,150", f"--screenshot={out / f'header-{theme}.png'}", svg.resolve().as_uri(),
                    f"--user-data-dir={tempfile.mkdtemp()}"]
             try:
                 ok = subprocess.run(cmd, timeout=60, capture_output=True).returncode == 0
