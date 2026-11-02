@@ -115,6 +115,6 @@ SpotCast, Wakecast, NunoGoncalves06.github.io.
 
 ## 5. Screenshots (controller)
 
-TO BE FILLED BY THE CONTROLLER (browser pane checks of `preview/light.html` and `preview/dark.html`).
+Controller check in the browser pane (dark.html at 375 px): scrollWidth 375 = innerWidth 375, all 4 images loaded, nothing cut. The four Edge screenshots were also read by eye: header sharp in both themes, badges full-size on one line each at 375 px, no clipped text. Tests: 37 passed; `check_readme.py` exit 0.
 
 Files from `preview/shoot.py` (headless Edge): `preview/shots/light-1440.png`, `dark-1440.png`, `light-375.png`, `dark-375.png`. Edge headless will not lay out narrower than about 492 px, so each page is shown inside an iframe of the exact width. The header SVGs now carry only the name and title. The scripted overflow check read scrollWidth equal to innerWidth for all four (1440/1440 and 375/375). The controller should still confirm in the browser pane.
